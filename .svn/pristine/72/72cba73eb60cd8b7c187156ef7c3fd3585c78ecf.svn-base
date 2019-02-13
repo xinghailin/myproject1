@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process displayName="客户端发起的销售流程" instanceUrl="/snaker/flow/all" name="buy">
+<start displayName="start1" layout="118,187,68,49" name="start1">
+<transition g="" name="transition1" offset="0,0" to="customerAlipaySuccess"/>
+</start>
+<task assignee="alipaySuccess.operator" autoExecute="Y" displayName="客户支付宝付款成功" form="/alipaySuccess" layout="250,184,137,56" name="customerAlipaySuccess" performType="ANY" taskType="Major">
+<transition g="" name="transition2" offset="0,0" to="customerSureMoney"/>
+</task>
+<task assignee="customerSureMoney.operator" autoExecute="Y" displayName="客户端-财务核实款项" form="/customerSureMoney" layout="480,183,139,59" name="customerSureMoney" performType="ANY" taskType="Major">
+<transition g="" name="transition3" offset="0,0" to="end1"/>
+</task>
+<end displayName="end1" layout="737,189,59,44" name="end1"/>
+</process>

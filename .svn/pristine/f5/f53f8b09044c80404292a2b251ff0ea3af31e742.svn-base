@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>益友圈后台系统</title>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script>
+		$(function Height(){
+			$('.mian_left').css('height', $(window).height()-100);
+			 });
+
+			 $(window).resize(function() {
+		    //改变窗体大小时适应浏览器高度
+		    $('.mian_left').css('height', $(window).height()-100);
+		})
+		</script>
+	</head>
+	<body onload="Height()">
+		<div class="header">
+			<div class="logo">
+				<img src="images/logos.png" />
+			</div>
+			
+			<div class="header_rg">
+				<div class="h_rglist"><span class="username">张三丰</span><a href="#" class="close_btn">安全退出</a><a href="#" class="close_btn">修改密码</a></div>
+			</div>
+		</div>
+		<div class="header_lf"><span class="home"></span><span style="color: #585858;">您的位置：</span><span class="fc00">会员管理 </span> <span class="fc00 fz_14px">></span> <span class="fc00">会员新增</span></div>
+		<div class="mian_list">
+			
+			<div class="mian_left">
+			<div class="nav_list">
+					<ul>
+					<li><div class="navs01 nav_link"><span class="span_img01"></span> <span class="fz_14px fc_white">页面管理</span></div>
+					<div class="navs02 hi1de">
+						<a href="#" class="navs02_a1">首页内容推荐</a>
+						<a href="#" class="navs02_a2">首页模板</a>
+					</div>
+					</li>
+					<li><div class="navs01 nav_link"><span class="span_img02"></span> <span class="fz_14px fc_white">内容审核</span></div>
+					<div class="navs02 hide">
+						<a href="#" class="navs02_a2">新闻资讯</a>
+						<a href="#" class="navs02_a2">热播剧场</a>
+						<a href="#" class="navs02_a2">院线大片</a>
+						<a href="#" class="navs02_a2">综艺放送</a>
+						<a href="#" class="navs02_a2">音乐秀场</a>
+					</div>
+					</li>
+	
+				</ul>
+				
+			</div>
+			</div>
+			<div class="mian_right">
+				
+				<div class="rg_list">
+					<h1 class="tt_h1">页面管理</h1>
+					<div class="tb_list">
+						<ul class="tb_ul02">
+						  <li >
+						  	<div class="tbul02_left">
+						  	<div class="tab_txt01"><span class="td_01"><label class="fc_red">*</label>按照发布时间：</span>
+						  		<span class="td_02"><input type="text" class="input_text01"></span>
+						  		<span class="td_02" style="margin-left: 8px;"><input type="text" class="input_text01"></span>
+						  	</div>
+						  </div>
+						  	
+						  </li>
+						   <li >
+						  	<div class="tbul02_left02 border_right">
+						  	  <div class="tab_txt01">
+						  	  	<span class="td_01"><label class="fc_red">*</label>内容类别：</span><span class="td_03">新闻资讯</span>
+						  	</div>
+						  </div>
+						  <div class="tbul02_left02 border_right">
+						  <div class="tab_txt01"><span class="td_01"><label class="fc_red">*</label>新闻类别：</span>
+						  		<span class="td_03"><select>
+						  			<option>体育</option>
+						  		</select></span>
+						  	</div>
+						  </div>
+						  	<div class="tbul02_right02">
+						  		<div class="tab_txt01"><span class="td_01">状态选择：</span>
+						  		<span class="td_03"><select class="select">
+						  			<option>--请选择--</option>
+						  			<option>1</option>
+						  		</select></span>
+						  	</div>
+						  	</div>
+						  </li>
+						   <li >
+						  	<div class="tbul02_left02 border_right">
+						  	  <div class="tab_txt01">
+						  	  	<span class="td_01"><label class="fc_red">*</label>名称：</span><span class="td_02" style="margin-top: 8px;"><input type="text" class="input_text01"></span>
+						  	</div>
+						  </div>
+						  <div class="tbul02_left02 border_right">
+						  <div class="tab_txt01"><span class="td_01"><label class="fc_red">*</label>是否有图片：</span>
+						  	<span class="td_02" style="margin-top: 10px;"><input type="radio"></span>
+						  		<span class="td_03">是</span>
+						  		<span class="td_02" style="margin-top: 10px;"><input type="radio"></span>
+						  		<span class="td_03">否</span>
+						  	</div>
+						  </div>
+						  	<div class="tbul02_right02">
+						  		<div class="tab_txt01"><span class="td_01"><label class="fc_red">*</label>是否有视频：</span>
+						  	<span class="td_02" style="margin-top: 10px;"><input type="radio"></span>
+						  		<span class="td_03">是</span>
+						  		<span class="td_02" style="margin-top: 10px;"><input type="radio"></span>
+						  		<span class="td_03">否</span>
+						  	</div>
+						  	</div>
+						  </li>
+						</ul>
+					
+				</div>
+				<div class="btnlist">
+						<div style="width: 91px; margin: auto;"><a href="#" class="btn91_01">查询</a></div>
+					</div>
+					<div class="table_list">
+						<div class="kong">
+							
+						</div>
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							<th><input type="checkbox"></th>
+							<th>内容类型</th>
+							<th class="width100">新闻类别</th>
+							<th>名称</th>
+							<th>内容</th>
+							<th>视频</th>
+							<th>图片</th>
+							<th>加入时间</th>
+							<th>审核状态</th>
+							<th>操作</th>
+							<tr>
+								<td><input type="checkbox"></td>
+								<td>新闻资讯</td>
+								<td>新闻</td>
+								<td><div class="width140 nowrap" style="text-align: left;">益友圈公司益友圈公司益友圈公司</div></td>
+								<td><a href="#">点击查看</a></td>
+								<td><img src="images/login2.png" width="40px" height="40px"></td>
+								<td><img src="images/login2.png" width="40px" height="40px"></td>
+								<td>2014-08-20 13:41:23</td>
+								<td>审核通过</td>
+								<td><a href="#">取消推荐</a></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox"></td>
+								<td>新闻资讯</td>
+								<td>新闻</td>
+								<td><div class="width140 nowrap" style="text-align: left;">益友圈公司益友圈公司益友圈公司</div></td>
+								<td><a href="#">点击查看</a></td>
+								<td><img src="images/login2.png" width="40px" height="40px"></td>
+								<td><img src="images/login2.png" width="40px" height="40px"></td>
+								<td>2014-08-20 13:41:23</td>
+								<td>审核通过</td>
+								<td><a href="#">推荐</a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="pagelist">
+						共<span>34</span>条，第1/4页&nbsp;&nbsp;<a href="#">首页</a>&nbsp;&nbsp;<a href="#">上一页</a>&nbsp;&nbsp;<a href="#">下一页</a>&nbsp;&nbsp;<a href="#">尾页</a>
+					</div>
+			</div>
+		</div></div>
+	</body>
+</html>

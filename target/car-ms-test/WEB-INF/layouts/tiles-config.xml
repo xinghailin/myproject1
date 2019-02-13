@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="singleLayout" template="/WEB-INF/views/base/singleLayout.jsp">
+		<put-attribute name="links" value="/WEB-INF/views/base/links.jsp" />
+	</definition>
+
+	<definition name="singleLayoutbiz" template="/WEB-INF/views/base/layout/singleLayout.jsp">
+	</definition>
+	
+	<definition name="mainView" template="/WEB-INF/views/base/topLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/base/header.jsp" />
+		<put-attribute name="leftMenu" value="/WEB-INF/views/base/leftMenuNew.jsp" />
+	</definition>
+    
+	<definition name="rightView" extends="singleLayout">
+		<put-attribute name="content" value="/WEB-INF/views/base/welcome.jsp"/>
+	</definition> 
+   
+	<definition name="sampleView" extends="singleLayout">
+		<put-attribute name="titleKey" value="page.title.index" />
+		<put-attribute name="content" value="/WEB-INF/views/base/sample.jsp"/>
+	</definition> 
+	<!-- baselayout -->
+	<definition name="common.baseLayout" template="/WEB-INF/views/base/layout/baseLayout.jsp">
+		<put-attribute name="links" value="/WEB-INF/views/base/layout/links.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/base/layout/header.jsp" />
+	</definition>
+	<!-- 单页面 -->
+	<definition name="common.singleLayout" template="/WEB-INF/views/base/layout/singleLayout.jsp">
+		<put-attribute name="links" value="/WEB-INF/views/base/layout/links.jsp" />
+	</definition>
+	
+	<!-- 登录 -->
+	<definition name="loginView" extends="singleLayout">
+		<put-attribute name="content" value="/WEB-INF/views/login.jsp"/>
+	</definition>
+	<!-- 首页 -->
+	<definition name="indexView" extends="singleLayout">
+		<put-attribute name="titleKey" value="page.title.index" />
+		<put-attribute name="content" value="/WEB-INF/views/base/layout/content.jsp" />
+		<put-attribute name="leftMenu" cascade="true" value="/WEB-INF/views/base/layout/leftMenu.jsp" />
+	</definition>
+	<!-- 错误提示页 -->
+	<definition name="error.message" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/views/base/error.jsp"></put-attribute>
+	</definition>
+	<!-- 错误提示页 -->
+	<definition name="error.message.nologin" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/views/base/errornologin.jsp"></put-attribute>
+	</definition>
+	<!-- 查询角色 -->
+	<definition name="permission.roleQueryView" extends="singleLayout">
+		<put-attribute name="content" value="/WEB-INF/views/permission/role/query.jsp"/>
+	</definition>
+	<!-- 新增角色 -->
+	<definition name="permission.roleAddView" extends="singleLayout">
+		<put-attribute name="content" value="/WEB-INF/views/permission/role/add.jsp"/>
+	</definition>
+	<!-- 修改角色 -->
+	<definition name="permission.roleEditView" extends="singleLayout">
+		<put-attribute name="content" value="/WEB-INF/views/permission/role/edit.jsp"/>
+	</definition>
+	<!-- 配置角色资源 -->
+	<definition name="permission.roleConfigResourceView" extends="singleLayout">
+		<put-attribute name="content" value="/WEB-INF/views/permission/role/configResource.jsp"/>
+	</definition>
+	<!-- 查询资源 -->
+	<definition name="permission.resourceQueryView" extends="singleLayout">
+		<put-attribute name="content" value="/WEB-INF/views/permission/resource/query.jsp"/>
+	</definition>
+	<!-- 新增资源 -->
+	<definition name="permission.resourceAddView" extends="singleLayout">
+		<put-attribute name="content" value="/WEB-INF/views/permission/resource/add.jsp"/>
+	</definition>
+	<!-- 编辑资源 -->
+	<definition name="permission.resourceEditView" extends="singleLayout">
+		<put-attribute name="content" value="/WEB-INF/views/permission/resource/edit.jsp"/>
+	</definition>
+	<!-- 配置角色菜单 -->
+	<definition name="system.menu.role.config" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/permission/role/configMenu.jsp"/>
+    </definition>
+	
+	
+	<!-- 基础数据 -->
+	<definition name="system.basicdata.view" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/system/basicdata/query.jsp"/>
+    </definition>
+    <definition name="system.basicdata.to.add" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/system/basicdata/add.jsp"/>
+    </definition>
+	<definition name="system.basicdata.to.edit" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/system/basicdata/edit.jsp"/>
+    </definition>
+	<definition name="system.user.query" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/system/user/query.jsp"/>
+    </definition>
+    <definition name="system.user.to.add" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/system/user/add.jsp"/>
+    </definition>
+	<definition name="system.user.to.edit" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/system/user/edit.jsp"/>
+    </definition>
+    <definition name="system.user.resetPwd.view" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/system/user/resetPwd.jsp"/>
+    </definition>
+    <definition name="system.brand.index" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/system/brand/query.jsp"/>
+    </definition>
+    <definition name="system.brand.to.add" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/system/brand/add.jsp"/>
+    </definition>
+	<definition name="system.brand.to.edit" extends="singleLayout">
+        <put-attribute name="content" value="/WEB-INF/views/system/brand/edit.jsp"/>
+    </definition>
+	
+	
+ 	<!-- 个人中心 -->
+	<definition name="personal.updatePwd.view" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/views/personalCenter/updatePwd.jsp"></put-attribute>
+	</definition>
+	<definition name="personal.lookPermission.view" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/views/personalCenter/permission.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 推送消息 -->
+	<definition name="content.message.add" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/views/message/add.jsp"></put-attribute>
+	</definition>
+	<definition name="content.message.query" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/views/message/query.jsp"></put-attribute>
+	</definition>
+	
+	
+	<!-- 到车辆批量录入Excel导入页面 -->
+	<definition name="batchtypein.view" extends="singleLayout" >
+		<put-attribute name="content" value="/WEB-INF/views/product_Excel.jsp" />
+	</definition>
+	<!-- 到车辆价格Excel导入页面 -->
+	<definition name="adjustprice.view" extends="singleLayout" >
+		<put-attribute name="content" value="/WEB-INF/views/price_Excel.jsp" />
+	</definition>
+	
+	<!-- 群发短信 -->
+	<definition name="sms.batch.send.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/system/sms/batchSend.jsp"></put-attribute>
+	</definition>
+	
+	
+	<!-- 到门店首页 -->
+	<definition name="shop.index" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/shop/query.jsp"></put-attribute>
+	</definition>
+	<!-- 到门店车辆首页 -->
+	<definition name="shopcars" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/shop/shopcarslst.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 到我的门店首页 -->
+	<definition name="shop.index.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/shop/queryview.jsp"></put-attribute>
+	</definition>
+	<!-- 到我的门店车辆首页 -->
+	<definition name="shopviewcars" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/shop/shopcarsviewlst.jsp"></put-attribute>
+	  
+	</definition>
+	<!-- 到仓库首页 -->
+	<definition name="store.index" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/shop/storequery.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 到查看仓库车辆首页 -->
+	<definition name="storecars" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/shop/storecarslst.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="snaker.flow.order" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/content/snaker/order.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.flow.all" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/content/snaker/all.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.process.list" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/content/snaker/processList.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.process.edit" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/content/snaker/processEdit.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.process.view" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/content/snaker/processView.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.process.designer" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/content/snaker/processDesigner.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.process.diagram" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/content/snaker/diagram.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.process.deploy" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/content/snaker/processDeploy.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.surrogate.list" extends="singleLayout">
+	 <put-attribute name="content" value="/WEB-INF/content/snaker/surrogateList.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.surrogate.edit" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/snaker/surrogateEdit.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.surrogate.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/snaker/surrogateView.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.leave.apply" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/flow/leave/apply.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.leave.apply.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/flow/leave/applyView.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.leave.dept" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/flow/leave/approveDept.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.leave.dept.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/flow/leave/approveDeptView.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.leave.boss" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/flow/leave/approveBoss.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.leave.boss.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/flow/leave/approveBossView.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.task.home" extends="singleLayout">
+	  <!-- <put-attribute name="content" value="/WEB-INF/content/snaker/activeTask.jsp"></put-attribute> -->
+	  <put-attribute name="content" value="/WEB-INF/content/snaker/newActiveTask.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.task.more" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/snaker/activeTaskMore.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.task.actor" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/snaker/actor.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.task.cc.more" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/snaker/activeCCMore.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.task.history" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/snaker/historyTask.jsp"></put-attribute>
+	</definition>
+	<definition name="snaker.loan.apply" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/flow/borrow/apply.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="snaker.alltask.home" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/content/snaker/newActiveTaskAll.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 到车辆录入页 -->
+	<definition name="car.typein.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/typein.jsp"></put-attribute>
+	</definition>
+	<!-- 到车辆录入列表页 -->
+	<definition name="car.typein.lst.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/typeinlst.jsp"></put-attribute>
+	</definition>
+	<!-- 到车辆审核列表页 -->
+	<definition name="car.audit.lst.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/auditlst.jsp"></put-attribute>
+	</definition>
+	<!-- 到单个车辆审核页 -->
+	<definition name="car.audit.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/audit.jsp"></put-attribute>
+	</definition>
+	<!-- 到单个车辆修改页 -->
+	<definition name="car.edit.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/edit.jsp"></put-attribute>
+	</definition>
+	<!-- 到车辆总资产库列表页 -->
+	<definition name="car.asset.lst.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/assetlst.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 到可销售车辆列表页 -->
+	<definition name="car.asset.lst.realsale.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/realSale.jsp"></put-attribute>
+	</definition>
+	<!--  新可售车辆  -->
+	<definition name="vendibilitypageView" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/newrealSale.jsp"></put-attribute>
+	</definition>
+	<!-- 到可销售车辆列表页供勾选 -->
+	<definition name="car.asset.lst.realsale.chooseview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/chooserealSale.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 到客户信息列表页 -->
+	<definition name="client.info.lst.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/clientinfolst.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 到客户信息列表页 -->
+	<definition name="client.info.lst.all.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/clientinfoalllst.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 到客户信息修改页 -->
+	<definition name="client.info.edit.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/clientinfoedit.jsp"></put-attribute>
+	</definition>
+	<!-- 到客户信息查看页 -->
+	<definition name="client.info.view.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/clientinfoview.jsp"></put-attribute>
+	</definition>
+	<!-- 到客户信息查看总览页 -->
+	<definition name="client.info.allview.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/clientinfoallview.jsp"></put-attribute>
+	</definition>
+	<!-- 到客户信息新增页 -->
+	<definition name="client.info.add.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/clientinfoadd.jsp"></put-attribute>
+	</definition>
+	
+	
+	<!-- 到车辆总资产库列表页修改 -->
+	<definition name="car.asset.edit.lst.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/asseteditlst.jsp"></put-attribute>
+	</definition>
+	<!-- 到填写客户信息表页 -->
+	<definition name="client.info.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/outRepository/clientinfo.jsp"></put-attribute>
+	</definition>
+	<!-- 到填写合同页 -->
+	<definition name="client.contract.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/outRepository/contract.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 到查看客户信息 合同页 -->
+	<definition name="client.audit.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/outRepository/audit.jsp"></put-attribute>
+	</definition>
+	<!-- 到审核首付页 -->
+	<definition name="finance.firstpay.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/outRepository/financeaudit.jsp"></put-attribute>
+	</definition>
+	<!-- 到门店销售指引客户验车页 -->
+	<definition name="shop.checkcar.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/outRepository/shopcheckcar.jsp"></put-attribute>
+	</definition>
+	<!-- 到通知客户支付尾款页 -->
+	<definition name="shop.notify.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/outRepository/shopnotify.jsp"></put-attribute>
+	</definition>
+	<!-- 到查看尾款审核页 -->
+	<definition name="finance.finalpay.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/outRepository/finalpay.jsp"></put-attribute>
+	</definition>
+	<!-- 到查看尾款审核页 -->
+	<definition name="finance.matieral.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/outRepository/readyoutmatieral.jsp"></put-attribute>
+	</definition>
+	<!-- 到查看结算页 -->
+	<definition name="finance.settle.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/outRepository/settlement.jsp"></put-attribute>
+	</definition>
+	<!-- 视频上传 -->
+	<definition name="videos.upload.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/outRepository/videos_upload.jsp"></put-attribute>
+	</definition>
+	<!-- 控制总资产库车辆列表 -->
+	<definition name="control.repository.list.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/controlRepository/car_move_list.jsp"></put-attribute>
+	</definition>
+	<definition name="control.repository.carmoveapply.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/controlRepository/car_move_apply.jsp"></put-attribute>
+	</definition>
+	<definition name="control.repository.hq.audit.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/controlRepository/car_hq_audit.jsp"></put-attribute>
+	</definition>
+	<definition name="control.repository.task.overdue" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/controlRepository/taskOverdue.jsp"></put-attribute>
+	</definition>
+	<definition name="car.move.logistic.begin.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/controlRepository/car_trans_begin.jsp"></put-attribute>
+	</definition>
+	<definition name="car.move.logistic.end.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/controlRepository/car_trans_end.jsp"></put-attribute>
+	</definition>
+	<definition name="car.move.shop.verify.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/controlRepository/shop_verify.jsp"></put-attribute>
+	</definition>
+	<definition name="count.index.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/report/reportBuyer.jsp"></put-attribute>
+	</definition>
+	<definition name="countcar.pricecar.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/report/reportPrice.jsp"></put-attribute>
+	</definition>
+	<definition name="introducebuy.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/report/introducebuy.jsp"></put-attribute>
+	</definition>
+	<definition name="countmodel.selltable.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/report/modelsell.jsp"></put-attribute>
+	</definition>
+	<definition name="countcar.avg.warehouse.age.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/report/avg_warehouse_age.jsp"></put-attribute>
+	</definition>
+	<definition name="countbuycar.buycar.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/report/buycar_case.jsp"></put-attribute>
+	</definition>
+	<definition name="countbuycarpurpose.buycar.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/report/buycar_purpose.jsp"></put-attribute>
+	</definition>
+	<definition name="countbuycargrade.buycar.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/report/buycar_grade.jsp"></put-attribute>
+	</definition>
+	<definition name="count.profit.car" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/profit.jsp"></put-attribute>
+	</definition>
+	<!--合同列表查看  -->
+	<definition name="contract.query.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/contractQuery.jsp"></put-attribute>
+	</definition>
+	<!--合同详情查看  -->
+	<definition name="contract.query.datails.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/assetRepository/contractDatails.jsp"></put-attribute>
+	</definition>
+	<!-- app端管理-banner管理 -->
+	<definition name="bannerIndexView" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/banner/query.jsp"></put-attribute>
+	</definition>
+	<definition name="carTypeIndexView" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/cartype/query.jsp"></put-attribute>
+	</definition>
+	<definition name="carTypeAddView" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/cartype/add.jsp"></put-attribute>
+	</definition>
+	<definition name="carTypeEditView" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/cartype/edit.jsp"></put-attribute>
+	</definition>
+	<!--预约到店查询与处理  -->
+	<definition name="meet.shop.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/meet/meet.jsp"></put-attribute>
+	</definition>
+	<!--预约到店详情  -->
+	<definition name="meet.details" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/meet/meetDatails.jsp"></put-attribute>
+	</definition>
+	<!--到帮我找车页面  -->
+	<definition name="find.car.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/findcar.jsp"></put-attribute>
+	</definition>
+	<!-- 帮我找车详情查看 -->
+	<definition name="help.find.car.details.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/findcarDatails.jsp"></put-attribute>
+	</definition>
+	<definition name="recommend.cartype.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/recommend/recommendCarModel.jsp"></put-attribute>
+	</definition>
+	<definition name="find.by.car.model" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/recommend/carModelDatails.jsp"></put-attribute>
+	</definition>
+	<definition name="putaway.manage.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/putawayManage/putawayManage.jsp"></put-attribute>
+	</definition>
+	<!-- 趣话 -->
+	<definition name="interet.talk.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/interetTalk/interetTalk.jsp"></put-attribute>
+	</definition>
+	<definition name="add.interet.talk.page.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/interetTalk/addInteretTalk.jsp"></put-attribute>
+	</definition>
+	<definition name="find.bargain.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/interetTalk/updateBargain.jsp"></put-attribute>
+	</definition>
+	<definition name="select.byidcar.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/shop/carAudit.jsp"></put-attribute>
+	</definition>
+	<definition name="initator.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/interetTalk/initator.jsp"></put-attribute>
+	</definition>
+	<definition name="bargain.details" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/interetTalk/bargainDetails.jsp"></put-attribute>
+	</definition>
+	<!--核销  -->
+	<definition name="confirm.sell.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/confirmSell.jsp"></put-attribute>
+	</definition>
+	<!--API品牌和车型管理  -->
+	<definition name="query.brand.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/APIbrand/APIbrand.jsp"></put-attribute>
+	</definition>
+	<definition name="query.model.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/APIbrand/APImodel.jsp"></put-attribute>
+	</definition>
+	
+	<!--需求and报价  -->
+	<definition name="needbilllistview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/needlst.jsp"></put-attribute>
+	</definition>
+
+	<!--需求处理  -->
+	<definition name="needdealview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/needdeal.jsp"></put-attribute>
+	</definition>
+	
+	<!--需求查看  -->
+	<definition name="needoverview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/needover.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="queryPurchaseBillPage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/Purchaselst.jsp"></put-attribute>
+	</definition>
+	<definition name="addPurchaseBillPage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/addPurchase.jsp"></put-attribute>
+	</definition>
+
+	<!-- <definition name="needbilladd" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/needbilladd.jsp"></put-attribute>
+	</definition> -->
+	<definition name="editneedbill.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/needbilladd.jsp"></put-attribute>
+	</definition>
+	<!--报价单列表  -->
+    <definition name="queryOfferbillpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/Offerbilllst.jsp"></put-attribute>
+	</definition> 
+	<definition name="queryOfferbilldetails" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/Offerbilldetails.jsp"></put-attribute>
+	</definition>
+	<!--需求单添加  -->
+	<definition name="addneedbill" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/addneedbill.jsp"></put-attribute>
+	</definition>
+
+	<definition name="addabrandpage.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/findcar/updateBrandAndModel.jsp"></put-attribute>
+	</definition>
+	
+	<!--加拿大业务  -->
+	<definition name="jndPurchaseLstIndex" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/purchaselst.jsp"></put-attribute>
+	</definition>
+	<definition name="njndPurchaseLstIndex" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/npurchaselst.jsp"></put-attribute>
+	</definition>
+	<definition name="jndPurchaseEdit" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/purchaseedit.jsp"></put-attribute>
+	</definition>
+	<definition name="jndPurchaseAdd" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/purchaseadd.jsp"></put-attribute>
+	</definition>
+	<definition name="njndPurchaseEdit" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/npurchaseedit.jsp"></put-attribute>
+	</definition>
+	<definition name="njndPurchaseAdd" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/npurchaseadd.jsp"></put-attribute>
+	</definition>
+	<definition name="jndApplyPayLstIndex" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/applypaylst.jsp"></put-attribute>
+	</definition>
+	<definition name="jndApplyPayAdd" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/apayadd.jsp"></put-attribute>
+	</definition>
+	<definition name="jndApplyPayEdit" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/apayedit.jsp"></put-attribute>
+	</definition>
+	<definition name="jndApplyPayView" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/apayview.jsp"></put-attribute>
+	</definition>
+	<definition name="jndApplyPayEdit2" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/apayedit2.jsp"></put-attribute>
+	</definition>
+	<definition name="jndApplyPayView2" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/apayview2.jsp"></put-attribute>
+	</definition>
+	<definition name="jndPurchaseLstForApayIndex" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/purchaselstforapay.jsp"></put-attribute>
+	</definition>
+	<definition name="jndSubPurchaseLstForApayIndex" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/subpurchaselstforapay.jsp"></put-attribute>
+	</definition>
+	<definition name="jndpayapplyauditindexview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/payapplyauditlst.jsp"></put-attribute>
+	</definition>
+	<definition name="jndpayapplyauditone" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/payapplyaudit.jsp"></put-attribute>
+	</definition>
+	<definition name="jndpayapplyauditoneview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/payapplyauditview.jsp"></put-attribute>
+	</definition>
+	<definition name="jndpayapplyauditone2" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/payapplyaudit2.jsp"></put-attribute>
+	</definition>
+	<definition name="jndpayapplyauditoneview2" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/payapplyauditview2.jsp"></put-attribute>
+	</definition>
+	<definition name="jndprecarlstview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/precarlst.jsp"></put-attribute>
+	</definition>
+	<definition name="jndblacksupplierIndexview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/blacksupplierlst.jsp"></put-attribute>
+	</definition>
+	
+	<!--海外业务新增合同流程页面  -->
+	<definition name="jndcontractindexview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/contractlst.jsp"></put-attribute>
+	</definition>
+	<definition name="jndcontractaddview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/contractadd.jsp"></put-attribute>
+	</definition>
+	<definition name="jndcontracteditview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/contractedit.jsp"></put-attribute>
+	</definition>
+	<definition name="jndPurchaseLstForContractIndexView" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/purchaselstforcontract.jsp"></put-attribute>
+	</definition>
+	<definition name="jndSubPurchaseLstForContractIndexView" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/subpurchaselstforcontract.jsp"></put-attribute>
+	</definition>
+	<definition name="jndContractauditView" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/contractaudit.jsp"></put-attribute>
+	</definition>
+	<definition name="jndContractviewView" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jnd/contractview.jsp"></put-attribute>
+	</definition>
+	<!--到加拿大列表页  -->
+	<definition name="canadarequirementlistpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndneed/jndneedlst.jsp"></put-attribute>
+	</definition>
+	<!-- 添加需求单 -->
+	<definition name="canadaaddneed" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndneed/jndneedadd.jsp"></put-attribute>
+	</definition>
+	<!--  需求单修改-->
+	<definition name="updatejndsuneed" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndneed/updatejndneed.jsp"></put-attribute>
+	</definition>
+	<!-- 需求单查看 -->
+	<definition name="jndsuneeddetails" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndneed/jndneeddetails.jsp"></put-attribute>
+	  <!-- 加拿大资产库查询 -->
+	</definition>
+	<!--到商城需求单审核页面  -->
+	<definition name="mallneedAudit" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndneed/mallneedAudit.jsp"></put-attribute>
+	</definition>
+	<definition name="mallneedAuditdetails" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndneed/mallneedAuditdetails.jsp"></put-attribute>
+	  <!-- 加拿大资产库查询 -->
+	</definition>
+	<definition name="jndAssetlibrarylist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/jndAssetlibrarylist.jsp"></put-attribute>
+	</definition>
+	<!-- 加拿大资产库出库单 -->
+	<definition name="CustomsDeclarationOutbound" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/CustomsDeclarationOutbound.jsp"></put-attribute>
+	</definition>
+	 <!-- 已报关车辆列表 -->
+	<definition name="ClearanceOfGoodsCarListpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/ClearanceOfGoodsCarList.jsp"></put-attribute>
+	</definition>
+	 <!-- 报关文件下载&退税凭证上传 -->
+	<definition name="fileDownloadAndUpload" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/fileDownloadAndUpload.jsp"></put-attribute>
+	</definition>
+	<!-- 退税单和报关文件下载页面 -->
+	<definition name="taxRefundAndClearanceOfGoodsFileDownload" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/fileDownload.jsp"></put-attribute>
+	</definition>
+	<definition name="BondedWarehouseEntryList" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/BondedWarehouseEntryList.jsp"></put-attribute>
+	</definition>
+    <definition name="tempsavecarList" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/tempsavecarList.jsp"></put-attribute>
+	</definition>
+	<definition name="GoToTheLibraryInspectionPage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/GoToTheLibraryInspectionPage.jsp"></put-attribute>
+	</definition>
+	<definition name="cartypein" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/cartypein.jsp"></put-attribute>
+	</definition>
+	<!--加拿大预入库列表页面  -->
+	<definition name="PreEntryVehicleListpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/jndPreEntryVehicleList.jsp"></put-attribute>
+	</definition>
+	<definition name="IncomingCheckListEntry" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/jndIncomingCheckListEntry.jsp"></put-attribute>
+	</definition>
+	<!--到海运和短驳费申请页面  -->
+	<definition name="freightApplyForpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/freightApplyForpage.jsp"></put-attribute>
+	</definition>
+	<definition name="freightpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/freightpage.jsp"></put-attribute>
+	</definition>
+	<definition name="freightCar" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/freightCar.jsp"></put-attribute>
+	</definition>
+	<!-- 加拿大申请查看和修改列表页面 -->
+	<definition name="freightApplyUpdatepage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/freightApplyUpdatepage.jsp"></put-attribute>
+	</definition>
+	<definition name="Updatefreight" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/Updatefreight.jsp"></put-attribute>
+	</definition>
+	<!--加拿大车辆详情页面查看  -->
+	<definition name="jndcardetails" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/jndcardetails.jsp"></put-attribute>
+	</definition>
+	<!-- 新付款申请单列表查看 -->
+	<definition name="njndApplyPayLstIndex" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/njndApplyPayLstIndex.jsp"></put-attribute>
+	</definition>
+	<!--  新付款申请单添加  -->
+	<definition name="njndApplyPayAdd" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/njndApplyPayAdd.jsp"></put-attribute>
+	</definition>
+	<!-- 到新的采购计划页面 -->
+	<definition name="njndPurchaseLstForApayIndex" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/njndPurchaseLstForApayIndex.jsp"></put-attribute>
+	</definition>
+	<!--  到合同选择页面-->
+	<definition name="njndSubPurchaseLstForApayIndex" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/njndSubPurchaseLstForApayIndex.jsp"></put-attribute>
+	</definition>
+	<!-- 到付款申请单审核页面 -->
+	<definition name="njndpayapplyauditindex" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/njndpayapplyauditindex.jsp"></put-attribute>
+	</definition>
+	<!-- 到审核页面 -->
+	<definition name="njndApplyPayEdit" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/njndApplyPayEdit.jsp"></put-attribute>
+	</definition>
+	<!-- 到合同列表页面 -->
+	<definition name="contractIndexpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/contractIndexpage.jsp"></put-attribute>
+	</definition>
+	<!-- 定金自采合同页面 -->
+	<definition name="selfbuyContractIndexpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/selfbuyContractIndexpage.jsp"></put-attribute>
+	</definition>
+	<!-- 添加列表页面查看详情页面 -->
+	<definition name="addnjndApplyPayEdit" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/addnjndApplyPayEdit.jsp"></put-attribute>
+	</definition>
+	<definition name="jndcontractdetails" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/jndcontractdetails.jsp"></put-attribute>
+	</definition>
+	<!-- 报关出库修改车辆 -->
+	<definition name="updatejndcar" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/jndAssetlibrarylist/updatejndcar.jsp"></put-attribute>
+	</definition>
+	<!-- 供应商名称列表 -->
+	<definition name="Supplier" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/Supplier/Supplier.jsp"></put-attribute>
+	</definition>
+	<definition name="supplieradd" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/Supplier/addsupplier.jsp"></put-attribute>
+	</definition>
+	<definition name="supplieredit" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/Supplier/editsupplier.jsp"></put-attribute>
+	</definition>
+	<!--新销售业务  -->
+	<definition name="bizclientinfolstview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/clientlst.jsp"></put-attribute>
+	</definition>
+	<definition name="bizclientinfolstallview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/clientlstall.jsp"></put-attribute>
+	</definition>
+	<definition name="bizclientinfoaddview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/clientadd.jsp"></put-attribute>
+	</definition>  
+	<definition name="bizclientinfoeditview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/clientedit.jsp"></put-attribute>
+	</definition>
+	<definition name="bizclientinfoviewview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/clientview.jsp"></put-attribute>
+	</definition>
+	<definition name="bizcontractlstview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/contractlst.jsp"></put-attribute>
+	</definition>
+	<!-- 风控进件总览 -->
+	<definition name="bizcontractpandectlstview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/pandectlst.jsp"></put-attribute>
+	</definition>
+	<definition name="bizcontractlstallview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/contractlstall.jsp"></put-attribute>
+	</definition>
+	<definition name="bizzeropurlstview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/zeropurchaselst.jsp"></put-attribute>
+	</definition>
+	<definition name="bizzeropurstorelstview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/zeropurstorelst.jsp"></put-attribute>
+	</definition>
+	<definition name="biz.chooserealSale" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/chooserealSale.jsp"></put-attribute>
+	</definition>
+	<definition name="biz.cartypeinview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/typein.jsp"></put-attribute>
+	</definition>
+	<definition name="bizshoptermlstview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/termlst.jsp"></put-attribute>
+	</definition>
+	<definition name="bizshoptermaddview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/termadd.jsp"></put-attribute>
+	</definition>
+	<definition name="bizshoptermeditview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/termedit.jsp"></put-attribute>
+	</definition>
+	<definition name="invoicelist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/invoicelst.jsp"></put-attribute>
+	</definition>
+	<definition name="invoiceshoplist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/invoiceshoplst.jsp"></put-attribute>
+	</definition>
+	<definition name="invoicefinancelist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/invoicefinancelst.jsp"></put-attribute>
+	</definition>
+	<definition name="caselst" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/caselst.jsp"></put-attribute>
+	</definition>
+	<definition name="saleborrowlstforcasechoose" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/casechoosesaleborrowlistfor.jsp"></put-attribute>
+	</definition>
+	<definition name="caselawlst" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/caselawlst.jsp"></put-attribute>
+	</definition>
+	<definition name="caseotherlst" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/caseotherlst.jsp"></put-attribute>
+	</definition>
+	<definition name="caseotherlawlst" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/caseotherlawlst.jsp"></put-attribute>
+	</definition>
+	<!--到售后回租合同页面  -->
+	<definition name="addleasebackcontractpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/addleasebackcontract.jsp"></put-attribute>
+	</definition>
+		
+    <!-- 催款短信状态 首页 -->
+	<definition name="sms.status.index" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/sms/messageview.jsp"></put-attribute>
+	</definition>
+
+	<!-- 到融资租赁合同列表页面 -->
+	<definition name="leasebackListpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/leasebackListpage.jsp"></put-attribute>
+	</definition>
+	<!--到融资租赁合同详情页面 -->
+	<definition name="leasebackdetails" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/leasebackdetails.jsp"></put-attribute>
+	</definition>
+
+	<!--修改融资租赁合同-->
+	<definition name="updateleaseback" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/updateleaseback.jsp"></put-attribute>
+	</definition>
+	<!-- 保险添加 -->
+	<definition name="addinsurance" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/addinsurance.jsp"></put-attribute>
+	  <!--可售车辆库表  -->
+	</definition>
+		<definition name="carlibrarylistpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/carlibrarylistpage.jsp"></put-attribute>
+	</definition>
+	<!--添加车辆情况  -->
+	<definition name="addcarcase" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/addcarcase.jsp"></put-attribute>
+	</definition>
+	<definition name="supplycarshop" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/supplycarshop.jsp"></put-attribute>
+	</definition>
+	<!--配车时配车清单  -->
+	<definition name="supplycardetailedlist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/supplycardetailedlist.jsp"></put-attribute>
+	</definition>
+	<!-- 移库列表页面 -->
+	<definition name="movelibrarylist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/movelibrarylist.jsp"></put-attribute>
+	</definition>
+	<!-- 配车单详情 -->
+	<definition name="supplycartabledetails" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/supplycartabledetails.jsp"></put-attribute>
+	</definition>
+	<!-- 配车超额审核页面 -->
+	<definition name="movelibraryauditlistpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/movelibraryauditlist.jsp"></put-attribute>
+	</definition>
+	<!-- 门店确认到店列表页面 -->
+	<definition name="shopconfirmedlistpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/shopconfirmedlistpage.jsp"></put-attribute>
+	</definition>
+    <!--每日库存报价     状态 首页 -->
+	<definition name="inventoryQuotation.status.add" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/inventoryQuotation/add.jsp"></put-attribute>
+	</definition>
+	<definition name="inventoryQuotation.status.look" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/inventoryQuotation/look.jsp"></put-attribute>
+	</definition>	
+	<definition name="inventoryQuotation.status.find" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/inventoryQuotation/find.jsp"></put-attribute>
+	</definition>
+   <definition name="inventoryQuotation.status.findtwoprice" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/inventoryQuotation/twoprice.jsp"></put-attribute>
+	</definition>
+   <definition name="inventoryQuotation.status.findoneprice" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/inventoryQuotation/oneprice.jsp"></put-attribute>
+	</definition>	
+	<!-- 交车验车和材料车库列表页面 -->
+	<definition name="paycarandtest" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/paycarandtest.jsp"></put-attribute>
+	</definition>	
+	<!-- 定金到账审核列表页面 -->
+	<definition name="bizcontractfinancepage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/bizcontractfinancepage.jsp"></put-attribute>
+	</definition>
+	<!-- 全款尾款确认页面 -->
+		<definition name="fullpaymentsure" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/fullpaymentsure.jsp"></put-attribute>
+	</definition>		
+	<!-- 金融车首付款确认  -->
+		<definition name="financialDownPayment" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/financialDownPayment.jsp"></put-attribute>
+	</definition>
+	<!-- 材料出库页面  -->
+		<definition name="MaterialOutbound" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/MaterialOutbound.jsp"></put-attribute>
+	</definition>
+	<!-- 结算页面 -->
+	<definition name="settleaccounts" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/settleaccounts.jsp"></put-attribute>
+	</definition>
+	  <!--样车金融      -->
+	<definition name="carfinance.status.financedetaillist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/carFinance/financeDetailList.jsp"></put-attribute>
+	</definition>
+	<definition name="carfinance.status.financeshoplist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/carFinance/shopList.jsp"></put-attribute>
+	</definition>
+    <definition name="carfinance.status.financepayshoplist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/carFinance/payShopList.jsp"></put-attribute>
+	</definition>	
+	 <definition name="carfinance.status.financepaycarlistbyshop" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/carFinance/payCarListByShop.jsp"></put-attribute>
+	</definition>	
+	
+	
+    <!--采购金融      -->
+	<definition name="purchasingfinance.status.financedetaillist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/purchasingFinance/purchasingDetailList.jsp"></put-attribute>
+	</definition>
+
+	
+    <!--还款计划代扣款      -->
+	<definition name="paymentplan.status.planlist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/paymentplan/paymentplanList.jsp"></put-attribute>
+	</definition>	
+	<!--还款计划代扣款 详情页面      -->
+	<definition name="paymentplan.status.plandetaillist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/paymentplan/paymentplandetailList.jsp"></put-attribute>
+	</definition>	
+	<!-- 金融合同添加 -->
+	<definition name="financialcontracts" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/financialcontracts.jsp"></put-attribute>
+	</definition>
+	<!-- 保险报价添加 -->	
+	<definition name="quoteofInsurance" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/quoteofInsurance.jsp"></put-attribute>
+	</definition>
+	<definition name="contractdetails" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/contractdetails.jsp"></put-attribute>
+	</definition>	
+	<!--金融合同选车  -->
+		<definition name="financialselectcar" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/financialselectcarlist.jsp"></put-attribute>
+	</definition>
+	<definition name="contractselectcarpage" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/contractselectcarpage.jsp"></put-attribute>
+	</definition>
+	<definition name="contractvin" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/addleasebackcontract/contractvin.jsp"></put-attribute>
+	</definition>
+	
+		<!-- 北汽金融 车辆录入页 -->
+	<definition name="krcar.typein.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/krcar/typein.jsp"></put-attribute>
+	</definition>
+	<definition name="krcar.typein.lookview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/krcar/look.jsp"></put-attribute>
+	</definition>
+	<definition name="krcar.typein.outview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/krcar/out.jsp"></put-attribute>
+	</definition>
+	<definition name="krcar.typein.checkintolist" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/krcar/checkintolist.jsp"></put-attribute>
+	</definition>	
+	<definition name="krcar.typein.checkintoview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/krcar/checkinto.jsp"></put-attribute>
+	</definition>
+	<definition name="krcar.lookcheck.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/krcar/lookcheck.jsp"></put-attribute>
+	</definition>
+	<definition name="krcarbatchtypeinview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/krcar/carexcel.jsp"></put-attribute>
+	</definition>	
+	
+	<!--每周采购报价     状态 首页 -->
+	<definition name="procurementWeekly.status.add" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/procurementWeeklyQuotation/add.jsp"></put-attribute>
+	</definition>
+	<definition name="procurementWeekly.status.look" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/procurementWeeklyQuotation/look.jsp"></put-attribute>
+	</definition>	
+	<definition name="procurementWeekly.status.find" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/procurementWeeklyQuotation/find.jsp"></put-attribute>
+	</definition>
+   	<definition name="procurementWeekly.status.findtwoprice" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/procurementWeeklyQuotation/twoprice.jsp"></put-attribute>
+	</definition>
+   	<definition name="procurementWeekly.status.findoneprice" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/procurementWeeklyQuotation/oneprice.jsp"></put-attribute>
+	</definition> 	
+		
+	<!--车辆批发  -->
+	<definition name="wholesale.checklistforstore" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/wholesale/storeCheckList.jsp"></put-attribute>
+	</definition>	
+	<definition name="wholesale.checklistforfinance" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/wholesale/financeCheckList.jsp"></put-attribute>
+	</definition>	
+	<definition name="wholesale.storecheckview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/wholesale/storeCheck.jsp"></put-attribute>
+	</definition>
+	<definition name="wholesale.financecheckview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/wholesale/financeCheck.jsp"></put-attribute>
+	</definition>	
+    <definition name="wholesale.nopasslistforstore" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/wholesale/storeNoPassList.jsp"></put-attribute>
+	</definition>	
+	<definition name="wholesale.nopasslistforfinance" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/wholesale/financeNoPassList.jsp"></put-attribute>
+	</definition>	
+	
+   <definition name="wholesale.updatemessageview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/wholesale/update.jsp"></put-attribute>
+	</definition>
+	
+   <definition name="wholesale.carlook" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/wholesale/lookList.jsp"></put-attribute>
+	</definition>	
+	
+	
+	
+   <definition name="bizshopgrouplstview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/shopGroup/grouplst.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="bizshopgroupaddview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/shopGroup/groupadd.jsp"></put-attribute>
+	</definition>
+   <definition name="bizshopgroupeditview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/shopGroup/groupedit.jsp"></put-attribute>
+	</definition>
+	
+	
+    <definition name="bizclientinfolst_shopGroupview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/clientlstall_shopgroup.jsp"></put-attribute>
+	</definition>
+	
+    <definition name="bizcontractlstview_shopgroupview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/biz/contractlst_shopgroup.jsp"></put-attribute>
+	</definition>
+	
+		<!-- web 网站 -->
+	<definition name="web.introduce.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/web/introduce.jsp"></put-attribute>
+	</definition>
+    <definition name="web.top_banner.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/web/top_banner.jsp"></put-attribute>
+	</definition>
+    <definition name="web.bottom_banner.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/web/bottom_banner.jsp"></put-attribute>
+	</definition>
+	<definition name="web.purchase_area_listpage.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/web/purchase_areaList.jsp"></put-attribute>
+	</definition>
+	<definition name="web.purchase_area_add.page" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/web/purchase_area_update.jsp"></put-attribute>
+	</definition>	
+	<definition name="web.purchase_pic_url_name_listpage.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/web/purchase_picList.jsp"></put-attribute>
+	</definition>	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 以下为商城 订单 -->
+	
+    <definition name="mall.orderDetail_listpage.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallOrder/orderDetail.jsp"></put-attribute>
+	</definition>
+	<definition name="orderDetail.checkview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallOrder/orderDetailCheck.jsp"></put-attribute>
+	</definition>
+	<definition name="orderDetail.lookview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallOrder/orderDetailLook.jsp"></put-attribute>
+	</definition>
+	<definition name="orderDetail.addcontract.page" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallOrder/addContract.jsp"></put-attribute>
+	</definition>
+    <definition name="mall.orderDetail_add_listpage.view" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallOrder/addContractList.jsp"></put-attribute>
+	</definition>
+	
+    <definition name="mall.sealapply_listpage.page" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallSeal/sealApply.jsp"></put-attribute>
+	</definition>	
+	
+    <definition name="sealapply.checkview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallSeal/sealApplyCheck.jsp"></put-attribute>
+	</definition>
+	<definition name="sealapply.lookview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallSeal/sealApplyLook.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="mall.sealapply_effective_listpage.page" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallSeal/effective_sealApply.jsp"></put-attribute>
+	</definition>
+   <definition name="mall.contract_listpage.page" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallContract/contract_list.jsp"></put-attribute>
+   </definition>
+	 <definition name="mall.order_listpage.page" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallContract/order_list.jsp"></put-attribute>
+	</definition>		
+	 <definition name="mall.car_listpage.page" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallContract/car_list.jsp"></put-attribute>
+	</definition>	
+    <definition name="mall.sealapply_backcheck_listpage.page" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallSeal/sealApplyBackCheckList.jsp"></put-attribute>
+	</definition>	
+    <definition name="sealapply.backcheckview" extends="singleLayout">
+	  <put-attribute name="content" value="/WEB-INF/views/mallSeal/sealApply_back_Check.jsp"></put-attribute>
+	</definition>	
+	
+</tiles-definitions>

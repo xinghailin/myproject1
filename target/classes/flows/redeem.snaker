@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process displayName="赎回申请" instanceUrl="/snaker/flow/all" name="redeem">
+<start displayName="start1" layout="155,182,48,39" name="start1">
+<transition g="" name="transition1" offset="0,0" to="finance1verify"/>
+</start>
+<task assignee="finance1verify.operator" autoExecute="Y" displayName="财务1审核" form="/snaker/redeem/finance1verify" layout="306,178,118,55" name="finance1verify" performType="ANY" taskType="Major">
+<transition g="" name="transition3" offset="0,0" to="finance2verify"/>
+</task>
+<task assignee="finance2verify.operator" autoExecute="Y" displayName="财务2审核" form="/snaker/redeem/finance2verify" layout="478,178,117,55" name="finance2verify" performType="ANY" taskType="Major">
+<transition g="" name="transition4" offset="0,0" to="finance3verify"/>
+</task>
+<task assignee="finance3verify.operator" autoExecute="Y" displayName="财务3审核" form="/snaker/redeem/finance3verify" layout="658,178,111,54" name="finance3verify" performType="ANY" taskType="Major">
+<transition g="" name="transition5" offset="0,0" to="end1"/>
+</task>
+<end displayName="end1" layout="840,182,104,36" name="end1"/>
+</process>

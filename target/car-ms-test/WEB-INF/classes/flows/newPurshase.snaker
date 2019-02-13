@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process displayName="采购流程申请(新)" instanceUrl="/snaker/flow/all" name="purshaseNew">
+<start displayName="start1" layout="24,213,-1,-1" name="start1">
+<transition g="" name="transition1" offset="0,0" to="carApplyNew"/>
+</start>
+<task assignee="apply.operator" autoExecute="Y" displayName="汽车采购申请(新)" form="/purshase/submitvehicleinfo" layout="120,211,-1,-1" name="carApplyNew" performType="ANY" taskType="Major">
+<transition g="" name="transition2" offset="0,0" to="customerEvaluate"/>
+</task>
+<task assignee="financeOne.operator" autoExecute="Y" displayName="财务1审核" form="/purshase/financeOne/evaluate" layout="672,210,-1,-1" name="financeOneEvaluate" performType="ANY" taskType="Major">
+<transition g="" name="transition5" offset="0,0" to="financeTwoEvaluate"/>
+</task>
+<task assignee="financeTwo.operator" autoExecute="Y" displayName="财务2审核" form="/purshase/financeTwo/evaluate" layout="792,210,-1,-1" name="financeTwoEvaluate" performType="ANY" taskType="Major">
+<transition g="" name="transition6" offset="0,0" to="financeThreeEvaluate"/>
+</task>
+<task assignee="bank.operator" autoExecute="Y" displayName="银行审批" form="/purshase/bankEvaluate/new" layout="1056,210,-1,-1" name="bankEvaluateNew" performType="ANY" taskType="Major">
+<transition g="" name="transition8" offset="0,0" to="end3"/>
+</task>
+<end displayName="end3" layout="1188,213,-1,-1" name="end3"/>
+<task assignee="third.operator" autoExecute="Y" displayName="第三方监管" form="/purshase/third/supervies" layout="408,210,-1,-1" name="theThirdSupervision" performType="ANY" taskType="Major">
+<transition g="" name="transition4" offset="0,0" to="CVDevaluate"/>
+</task>
+<task assignee="financeThree.operator" autoExecute="Y" displayName="财务3审核" form="/purshase/financeThree/evaluate" layout="924,210,-1,-1" name="financeThreeEvaluate" performType="ANY" taskType="Major">
+<transition g="" name="transition7" offset="0,0" to="bankEvaluateNew"/>
+</task>
+<task assignee="customer.operator" autoExecute="Y" displayName="地接评估" form="/purshase/customer/evaluate" layout="264,211,-1,-1" name="customerEvaluate" performType="ANY" taskType="Major">
+<transition g="" name="transition3" offset="0,0" to="theThirdSupervision"/>
+</task>
+<task assignee="CVD.operator" autoExecute="Y" displayName="中车检审核" form="/purchase/cvd/evaluate" layout="540,210,-1,-1" name="CVDevaluate" performType="ANY" taskType="Major">
+<transition g="" name="transition9" offset="0,0" to="financeOneEvaluate"/>
+</task>
+</process>

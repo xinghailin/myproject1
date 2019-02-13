@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>益友圈后台系统</title>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script>
+			$(function(){
+				    var $div_li =$(".mban_nav li");
+				    
+				    $div_li.click(function(){
+						$(this).addClass("mban_navzz")            //当前<li>元素高亮
+							   .siblings().removeClass("mban_navzz");  //去掉其他同辈<li>元素的高亮
+						
+			            var index =  $div_li.index(this);  // 获取当前点击的<li>元素 在 全部li元素中的索引。
+						$("div.mban_cent > div")   	//选取子节点。不选取子节点的话，会引起错误。如果里面还有div 
+								.eq(index).show(1000)   //显示 <li>元素对应的<div>元素
+								.siblings().hide(3000); //隐藏其他几个同辈的<div>元素
+					});
+					
+			})
+			
+		</script>
+		
+<script>
+		$(function Height(){
+			$('.mian_left').css('height', $(window).height()-100);
+			 });
+
+			 $(window).resize(function() {
+		    //改变窗体大小时适应浏览器高度
+		    $('.mian_left').css('height', $(window).height()-100);
+		})
+		</script>
+	</head>
+	<body onload="Height()">
+		<div class="header">
+			<div class="logo">
+				<img src="images/logos.png" />
+			</div>
+			
+			<div class="header_rg">
+				<div class="h_rglist"><span class="username">张三丰</span><a href="#" class="close_btn">安全退出</a><a href="#" class="close_btn">修改密码</a></div>
+			</div>
+		</div>
+		<div class="header_lf"><span class="home"></span><span style="color: #585858;">您的位置：</span><span class="fc00">会员管理 </span> <span class="fc00 fz_14px">></span> <span class="fc00">会员新增</span></div>
+		<div class="mian_list">
+			
+			<div class="mian_left">
+			<div class="nav_list">
+					<ul>
+					<li><div class="navs01 nav_link"><span class="span_img01"></span> <span class="fz_14px fc_white">页面管理</span></div>
+					<div class="navs02 hi1de">
+						<a href="#" class="navs02_a2">首页内容推荐</a>
+						<a href="#" class="navs02_a1">首页模板</a>
+					</div>
+					</li>
+					<li><div class="navs01 nav_link"><span class="span_img02"></span> <span class="fz_14px fc_white">内容审核</span></div>
+					<div class="navs02 hide">
+						<a href="#" class="navs02_a2">新闻资讯</a>
+						<a href="#" class="navs02_a2">热播剧场</a>
+						<a href="#" class="navs02_a2">院线大片</a>
+						<a href="#" class="navs02_a2">综艺放送</a>
+						<a href="#" class="navs02_a2">音乐秀场</a>
+					</div>
+					</li>
+	
+				</ul>
+				
+			</div>
+			</div>
+			<div class="mian_right">
+				
+				<div class="rg_list">
+					<h1 class="tt_h1">页面管理</h1>
+					
+					<ul class="mban_nav">
+						<li class="mban_navzz">首屏</li>
+						<li class="mban_navzz02">新闻资讯</li>
+						<li class="mban_navzz02">热播剧场</li>
+						<li class="mban_navzz02">院线大片</li>
+						<li class="mban_navzz02">综艺放送</li>
+						<li class="mban_navzz02">音乐秀场</li>
+						<li class="mban_navzz02">游戏中心</li>
+						<li class="mban_navzz02">美食天地</li>
+						<li class="mban_navzz02">疯狂购物</li>
+						<li class="mban_navzz02">分类大全</li>
+					</ul>
+					<div class="mban_cent">
+						<div class="">
+						<div class="table_list">
+						
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							
+							<th>名称(栏位)</th>
+							<th>内容大类</th>
+							<th>内容类型</th>
+							<th>操作</th>
+							<tr>
+								<td>航班</td>
+								<td>二级页面</td>
+								<td>益友圈公司益友圈公司益友圈公司</td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>交通</td>
+								<td>二级页面</td>
+								<td>益友圈公司益友圈公司益友圈公司</td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>餐饮</td>
+								<td>二级页面</td>
+								<td>益友圈公司益友圈公司益友圈公司</td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>购物</td>
+								<td>二级页面</td>
+								<td>益友圈公司益友圈公司益友圈公司</td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>酒店</td>
+								<td>二级页面</td>
+								<td>益友圈公司益友圈公司益友圈公司</td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>航班查询</td>
+								<td>二级页面</td>
+								<td>益友圈公司益友圈公司益友圈公司</td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>机场大屏</td>
+								<td>二级页面</td>
+								<td>益友圈公司益友圈公司益友圈公司</td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>机场地图</td>
+								<td>二级页面</td>
+								<td>益友圈公司益友圈公司益友圈公司</td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>机场公告</td>
+								<td>二级页面</td>
+								<td>益友圈公司益友圈公司益友圈公司</td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>banner图</td>
+								<td>内容</td>
+								<td>图片多个</td>
+								<td><a href="#" class="bianji_btn">编辑内容</a></td>
+							</tr>
+						</table>
+					</div>
+						</div>
+						<div class="hide">
+							<div class="table_list">
+						
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							
+							<th>名称(栏位)</th>
+							<th>内容大类</th>
+							<th>内容类型</th>
+							<th>操作</th>
+							<tr>
+								<td>跟多</td>
+								<td>二级页面</td>
+								<td>益友圈公司益友圈公司益友圈公司</td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>头条</td>
+								<td>内容</td>
+								<td>文字</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>新闻</td>
+								<td>内容</td>
+								<td>文字</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>资讯</td>
+								<td>内容</td>
+								<td>文字</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>热点</td>
+								<td>内容</td>
+								<td>文字</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>财经</td>
+								<td>内容</td>
+								<td>文字</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>专题</td>
+								<td>内容</td>
+								<td>文字</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>视频新闻</td>
+								<td>内容</td>
+								<td>视频（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>今日头条</td>
+								<td>内容</td>
+								<td>文字（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+						</table>
+					</div>
+						</div>
+						<div class="hide">
+							<div class="table_list">
+						
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							
+							<th>名称(栏位)</th>
+							<th>内容大类</th>
+							<th>内容类型</th>
+							<th>操作</th>
+							<tr>
+								<td>banner</td>
+								<td>内容</td>
+								<td>图片（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>更多</td>
+								<td>二级页面</td>
+								<td></td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>电视局</td>
+								<td>内容</td>
+								<td>视频（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+						</table>
+					</div>
+						</div>
+
+					<div class="hide">
+						<div class="table_list">
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							<th>名称(栏位)</th>
+							<th>内容大类</th>
+							<th>内容类型</th>
+							<th>操作</th>
+							<tr>
+								<td>banner</td>
+								<td>内容</td>
+								<td>图片（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>更多</td>
+								<td>二级页面</td>
+								<td></td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>影片</td>
+								<td>内容</td>
+								<td>视频（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+						</table>
+					</div>
+					</div>
+					<div class="hide">
+						<div class="table_list">
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							<th>名称(栏位)</th>
+							<th>内容大类</th>
+							<th>内容类型</th>
+							<th>操作</th>
+							<tr>
+								<td>节目</td>
+								<td>内容</td>
+								<td>视频（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>更多</td>
+								<td>二级页面</td>
+								<td></td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+						</table>
+					</div>
+					</div>
+					<div class="hide">
+						<div class="table_list">
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							<th>名称(栏位)</th>
+							<th>内容大类</th>
+							<th>内容类型</th>
+							<th>操作</th>
+							<tr>
+								<td>歌曲</td>
+								<td>内容</td>
+								<td>音乐（5条）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>更多</td>
+								<td>二级页面</td>
+								<td></td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+							<tr>
+								<td>明星专辑</td>
+								<td>内容</td>
+								<td></td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+						</table>
+					</div>
+					</div>
+					<div class="hide">
+						<div class="table_list">
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							<th>名称(栏位)</th>
+							<th>内容大类</th>
+							<th>内容类型</th>
+							<th>操作</th>
+							<tr>
+								<td>游戏</td>
+								<td>内容</td>
+								<td>图片（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>更多</td>
+								<td>二级页面</td>
+								<td></td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+						</table>
+					</div>
+					</div>
+					<div class="hide">
+						<div class="table_list">
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							<th>名称(栏位)</th>
+							<th>内容大类</th>
+							<th>内容类型</th>
+							<th>操作</th>
+							<tr>
+								<td>优惠券</td>
+								<td>内容</td>
+								<td>图片（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>美食攻略</td>
+								<td>内容</td>
+								<td>文字（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>更多</td>
+								<td>二级页面</td>
+								<td></td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+						</table>
+					</div>
+					</div>
+					<div class="hide">
+						<div class="table_list">
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							<th>名称(栏位)</th>
+							<th>内容大类</th>
+							<th>内容类型</th>
+							<th>操作</th>
+							<tr>
+								<td>代金券</td>
+								<td>内容</td>
+								<td>图片（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>免税攻略</td>
+								<td>内容</td>
+								<td>文字（多个）</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+							<tr>
+								<td>更多</td>
+								<td>二级页面</td>
+								<td></td>
+								<td><a href="#">编辑二级页面</a></td>
+							</tr>
+						</table>
+					</div>
+					</div>
+					<div class="hide">
+						<div class="table_list">
+						<table class="tb_mian" cellpadding="0" cellspacing="0">
+							<th>名称(栏位)</th>
+							<th>内容大类</th>
+							<th>内容类型</th>
+							<th>操作</th>
+							<tr>
+								<td>外部（内部）链接</td>
+								<td>内容</td>
+								<td>文字</td>
+								<td><a href="#">编辑内容</a></td>
+							</tr>
+						</table>
+					</div>
+					</div>
+					</div>
+			</div>
+		</div></div>
+		
+	</body>
+			<!--编辑框提示-->
+		<div class="add hide">
+						<h1 class="addd_h1">
+							添加内容-视频<a href="#" class="btn_close">X</a>
+						</h1>
+						<div class="addd_context">
+							<h1 class="addds_h1">视频</h1>
+							<div class="tb_border">
+								<table class="addd_table" cellpadding="0" cellspacing="0">
+								<tr>
+									<th>标题：</th>
+									<td><input type="text" name="biaoti" placeholder="请填写"></td>
+								</tr>
+								<tr>
+									<th>副标题：</th>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<th>内容频道：</th>
+									<td>综艺放送</td>
+								</tr>
+								<tr>
+									<th style="border-bottom: 0px;">推荐视频：</th>
+									<td style="border-bottom: 0px;"><input type="text" name="tuijian" placeholder="请选择"></td>
+								</tr>
+							</table>
+							</div>
+							
+							<div class="tb_border">
+								<table class="addd_table" cellpadding="0" cellspacing="0">
+								<tr>
+									<th>标题：</th>
+									<td><input type="text" name="biaoti" placeholder="请填写"></td>
+								</tr>
+								<tr>
+									<th>副标题：</th>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<th>内容频道：</th>
+									<td>综艺放送</td>
+								</tr>
+								<tr>
+									<th style="border-bottom: 0px;">推荐视频：</th>
+									<td style="border-bottom: 0px;"><input type="text" name="tuijian" placeholder="请选择"></td>
+								</tr>
+							</table>
+							</div>
+							
+							<div style="width: 240px; margin: auto; padding-top: 20px;">
+								<a href="#" class="btn91" style="margin-right: 15px;">保存</a>
+						<a href="#" class="btn91">继续添加</a>
+							</div>
+						</div>	
+					</div>
+					<script>
+						$(function(){
+							$(".bianji_btn").click(function(){
+								$(".add").show();
+							});
+						
+								$(".btn_close").click(function(){
+									$(".add").hide();
+									$(".tishitg_kk").hide();
+									$(".tishibtg_kk").hide();
+									$(".shjilu").hide();
+								});
+								$(".qd_btn").click(function(){
+									$(".tishitg_kk").hide();
+							});
+						})
+					</script>
+					<!--
+                    	小框提示
+                    -->
+					<div class="tishitg_kk hide">
+					<h1 class="addd_h1">
+							提示<a href="#" class="btn_close">X</a>
+						</h1>
+						<div class="ts_con">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名称的新闻资讯/热播剧场/院线大片/综艺放送/音乐秀场/游戏中心/美食天地/疯狂购物/分类大全审核通过！
+						</div>
+						<div style="width: 130px; margin: auto; padding-top: 20px;">
+								<a href="#" class="btn91 qd_btn" style="margin-left: 15px;">确定</a>
+						</div>
+				</div>
+				<!--
+                    	审核不通过理由提示框
+                    -->
+				<div class="tishibtg_kk hide">
+					<h1 class="addd_h1">
+						审核不通过理由：<a href="#" class="btn_close">X</a>
+					</h1>
+					<div class="ts_btg">
+						<textarea style="width: 100%;"rows=5" cols="30";></textarea>
+					</div>
+					<div style="width: 130px; margin: auto; padding-top: 20px;">
+								<a href="#" class="btn91" style="margin-left: 15px;">提交</a>
+						</div>
+				</div>
+				<div class="shjilu hide">
+					<h1 class="addd_h1">
+						新闻资讯-“名称” 审核记录<a href="#" class="btn_close">X</a>
+					</h1>
+					<div class="jltb_border">
+								<table class="jl_table" cellpadding="0" cellspacing="0">
+								<tr>
+									<th>审核人：</th>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<th>审核时间：</th>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<th style="border-bottom: 0px;">不通过理由：</th>
+									<td style="border-bottom: 0px;">&nbsp;</td>
+								</tr>
+							</table>
+							</div>
+					
+				</div>
+</html>

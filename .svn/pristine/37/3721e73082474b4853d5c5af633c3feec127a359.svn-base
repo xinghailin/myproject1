@@ -1,0 +1,51 @@
+/**
+ * Simplecomplete
+ */
+
+.autocompleter {
+    background: #ddd;
+    left: 0;
+    z-index: 100;
+}
+
+
+.autocompleter-list {
+    box-shadow: inset 0px 0px 6px rgba(0,0,0,0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.autocompleter-item-selected {
+    background: #ff0000;
+}
+
+.autocompleter-item {
+    padding: 2px 2px;
+    color: #444;
+    cursor: pointer;
+}
+
+.autocompleter-item:hover {
+    background: #ff0000;
+}
+
+.autocompleter-item strong {
+    background: #ff0000;
+    text-shadow: 0 1px 0 #ffffff;
+}
+
+.autocompleter-item span {
+    color: #bbbbbb;
+}
+
+.autocompleter-hint span {
+    color: transparent;
+}
+
+.autocompleter-closed {
+    display: none;
+}

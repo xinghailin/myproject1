@@ -1,0 +1,825 @@
+.mt10 {
+	margin-top: -2px;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+.container {
+	overflow: hidden;
+	width: 800px;
+	margin: 0px auto;
+	font-family: "微软雅黑", "Microsoft Yahei", "Verdana", "宋体";
+}
+
+.contr {
+	background-color: #5BB75B;
+	color: #FFF;
+	padding: 20px 0;
+	text-align: center;
+	/*
+         border-radius: 10px 10px 0 0;
+         -moz-border-radius: 10px 10px 0 0;
+         -webkit-border-radius: 10px 10px 0 0;
+         */
+}
+
+.upload_form_cont {
+	color: #333;
+	overflow: hidden;
+}
+
+.info {
+	/*background-color: #EEEEEE;*/
+	border: 1px solid #DDDDDD;
+	height: auto;
+	background: #F7F7F7;
+	color: #333;
+}
+
+.info>div {
+	font-size: 14px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	margin-top: 5px;
+	margin-right: 14px;
+	margin-bottom: 10px;
+	margin-left: 14px;
+}
+
+.info>h2 {
+	padding: 0 15px;
+}
+
+.info>canvas {
+	height: 20px;
+	width: 425px;
+	margin-top: 10px;
+	margin-right: 14px;
+	margin-bottom: 5px;
+	margin-left: 14px;
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+}
+
+.info #url {
+	width: 660px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	border: #CCC 1px solid;
+	padding: 2px;
+}
+
+#dropZone {
+	border: 3px dashed #CCC;
+	font-size: 36px;
+	font-weight: bold;
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+#dropZone.hover {
+	background-color: #DDD;
+}
+
+#dropZone.uploading {
+	background: #ffffff url(loading.gif) center 120% no-repeat;
+}
+
+#result .s, #result .f {
+	font-size: 12px;
+	margin-bottom: 20px;
+	padding: 10px;
+	/*
+         border-radius: 10px;
+         -moz-border-radius: 10px;
+         -webkit-border-radius: 10px;
+         */
+}
+
+#result .s {
+	background-color: #77fc9f;
+}
+
+#result .f {
+	background-color: #fcc577;
+}
+
+#fileinfo {
+	color: #333;
+	border: #DDD 1px solid;
+	margin-top: 20px;
+	padding-left: 30px;
+	font-weight: normal;
+	display: none;
+}
+
+#fileinfo h3 {
+	font-size: 14px;
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+
+#controllerBtn {
+	text-align: center;
+	width: 700px;
+	margin: 0px auto;
+}
+
+#controllerBtn input {
+	height: 30px;
+	width: 100px;
+	line-height: 30px;
+	background-repeat: repeat-x;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px
+		rgba(0, 0, 0, 0.05);
+	margin: 10px;
+	cursor: pointer;
+}
+
+.start_btn {
+	background-color: #5BB75B;
+	background-image: linear-gradient(to bottom, #62C462, #51A351);
+}
+
+.pause_btn {
+	background-color: #FAA732;
+	background-image: -moz-linear-gradient(center top, #FBB450, #F89406);
+	display: none;
+}
+
+.cancel_btn {
+	background-color: #DA4F49;
+	background-image: -moz-linear-gradient(center top, #EE5F5B, #BD362F);
+}
+
+#controllerBtn input:hover {
+	background-image: none;
+}
+
+#fileUpload {
+	display: none;
+}
+
+.chooseUpload {
+	width: 100%;
+	height: 100%;
+	color: #AAA;
+	font-size: 26px;
+	font-weight: bold;
+	display: inline-block;
+	text-decoration: none;
+}
+
+a.chooseUpload:hover {
+	color: #7fb80e;
+}
+
+.all_percent {
+	width: 730px;
+	height: 20px;
+	border: #5BB75B 1px solid;
+	padding: 2px;
+	position: relative;
+	margin-top: 8px;
+}
+
+.percent {
+	width: 0px;
+	height: 20px;
+	background: #5BB75B;
+}
+
+.percent_text {
+	color: #000;
+	width: 100%;
+	height: 20px;
+	line-height: 23px;
+	font-weight: normal;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.file_name_info {
+	width: 724px;
+	font-weight: normal;
+	margin-top: 0px;
+	background: #FCFAE0;
+	padding: 5px;
+	border: #DDD 1px solid;
+	border-top: none;
+}
+
+.file_name_info span {
+	width: 360px;
+	font-size: 14px;
+	display: inline-block;
+}
+
+.file_name_info span em {
+	font-style: normal;
+	color: #51A351;
+	font-weight: bold;
+}
+
+.file_name, .file_id {
+	color: #51A351;
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 30px;
+}
+
+.waitlist {
+	width: 730px;
+	font-size: 14px;
+	padding-right: 10px;
+	height: 150px;
+	overflow: auto;
+	border-top: #DDD 1px solid;
+	margin-bottom: 20px;
+}
+
+.waitlist li {
+	padding: 3px 0px;
+	list-style: decimal;
+	vertical-align: middle;
+	border-bottom: #DDD 1px dashed;
+}
+
+.waitlist li:hover {
+	background: #FCFAE0;
+}
+
+.waitlist li span {
+	color: #0052cc;
+	word-wrap: break-word;
+	word-break: normal;
+	margin-right: 30px;
+}
+
+a.deleteupload {
+	margin-left: 50px;
+	color: #FF0000;
+}
+
+a.deleteupload:hover {
+	text-decoration: underline;
+}
+
+.disabled_btn {
+	background-color: #CCC;
+	background-image: linear-gradient(to bottom, #CCC, #CCC);
+}
+
+.uploadTip, .supportTip, .supportTypeTip {
+	width: 730px;
+	height: auto;
+	font-size: 12px;
+	margin: 20px 0px;
+	border: #FF8247 1px solid;
+	display: none;
+}
+
+.tipInfo {
+	width: 720px;
+	height: auto;
+	line-height: 20px;
+	background: #F9F2BA;
+	padding-left: 10px;
+}
+
+.tipContent {
+	color: #FF5235;
+}
+
+a.closeTipBox {
+	width: 20px;
+	height: 20px;
+	color: #FFF;
+	text-align: center;
+	float: right;
+	display: block;
+	background: #FF8C00;
+}
+
+a.closeTipBox:hover {
+	background: #FF5500;
+}
+
+/*通栏导航*/
+.gui_header_qiyue {
+	background:
+		url(http://www.qiyipic.com/common/fix/passport_images/headBg.png)
+		repeat-x;
+	height: 31px;
+	width: 100%;
+}
+
+.title_ico_bg {
+	background: url(http://www.qiyipic.com/common/fix/mz_list_ico.gif)
+		no-repeat;
+	padding-left: 20px;
+	margin: 20px 0 0 15px;
+	font-size: 14px;
+	color: #000;
+	clear: both;
+	display: block;
+}
+
+.zhuanji #j-tab-content p {
+	padding: 20px 15px 0;
+}
+
+.head {
+	width: 970px;
+	margin: 0 auto;
+	padding: 20px 0 25px;
+}
+
+.logo {
+	font: 16px/24px "微软雅黑";
+	color: #000;
+}
+
+.logo img {
+	vertical-align: text-bottom;
+	margin: 0 10px -5px 0;
+	position: relative;
+}
+
+.head_link {
+	float: right;
+	margin-top: -21px;
+	line-height: 21px;
+}
+
+.headBg {
+	background:
+		url(http://www.qiyipic.com/common/fix/passport_images/headBg.png) 0 0
+		repeat-x;
+	height: 31px;
+	overflow: hidden;
+	width: 970px;
+	margin: 0 auto;
+}
+
+.headBg a {
+	color: #000 !important;
+}
+
+.headBg a:hover {
+	color: #4c7d08 !important;
+}
+
+.nav, .nav li {
+	float: left;
+	width: auto;
+}
+
+.nav li {
+	padding: 0 9px 0 10px;
+	border-right: 1px solid #d5d5d5;
+	margin: 9px 0;
+	line-height: 13px;
+	vertical-align: middle;
+	word-spacing: 0;
+}
+
+.nav .li1 {
+	padding: 0;
+	border: none;
+	margin: 0;
+	position: relative;
+}
+
+.nav .liLast {
+	border: none;
+}
+
+.headForm {
+	float: right;
+	background:
+		url(http://www.qiyipic.com/common/fix/passport_images/headBg.png) 0
+		-70px;
+	width: 195px;
+	height: 20px;
+	margin: 5px 5px 0 0;
+	display: inline;
+}
+
+.headText {
+	float: left;
+	width: 155px;
+	height: 15px;
+	border: none;
+	padding: 3px 5px;
+	background: none;
+}
+
+.headBtn {
+	float: left;
+	width: 30px;
+	height: 20px;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.headC {
+	float: right;
+	line-height: 30px;
+	word-spacing: 10px;
+	margin-right: 10px;
+}
+
+.username {
+	background:
+		url(http://www.qiyipic.com/common/fix/passport_images/headBg.png) 0
+		-35px;
+	padding-left: 15px;
+}
+
+.usernameHuiyuan {
+	background:
+		url(http://www.qiyipic.com/common/fix/qiyue_images/headBg1.png) 0
+		-65px;
+	padding-left: 15px;
+	float: left;
+}
+
+.head_more {
+	background:
+		url(http://www.qiyipic.com/common/fix/passport_images/headBg.png) 100%
+		-42px;
+	padding-right: 15px;
+}
+
+.headC a.a2 {
+	background:
+		url(http://www.qiyipic.com/common/fix/passport_images/headBg.png)
+		repeat scroll 100% -30px transparent;
+	float: left;
+	line-height: 23px;
+	margin-top: -4px;
+	padding: 7px 0 0;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	width: 75px;
+	z-index: 2;
+}
+
+/*托盘小浮层*/
+.head_popup {
+	background:
+		url(http://www.qiyipic.com/common/fix/passport_images/headBg.png) 0
+		-100px repeat-x #fff;
+	border: solid #c8c8c8;
+	border-width: 0 1px 1px;
+	padding-top: 1px;
+	position: absolute;
+}
+
+.head_popup a {
+	color: #000;
+}
+
+.head_popup a:hover {
+	color: #4c7d08;
+}
+
+.head_ul {
+	margin: 5px 10px 5px;
+}
+
+.head_ul li {
+	border-bottom: 1px solid #e2e2e2;
+	line-height: 30px;
+	text-align: center;
+}
+
+.head_ul .liLast {
+	border: none;
+}
+
+.head_popup p {
+	padding: 10px 10px 5px;
+	text-align: center;
+}
+
+.arraw {
+	display: inline-block;
+	width: 12px;
+	height: 8px;
+	background:
+		url(http://www.qiyipic.com/common/fix/passport_images/headBg.png) 0
+		-90px no-repeat;
+	position: absolute;
+	top: -6px;
+	right: 20px;
+	font-size: 0;
+}
+
+.head_popup .alignRight {
+	line-height: 30px;
+	padding: 5px 10px 0;
+}
+
+.head_popup a.jixuLink {
+	color: #589c03;
+	text-decoration: underline;
+}
+
+.head_popup a.jixuLink:hover {
+	color: #4a7f07;
+}
+
+.head_ul2 {
+	padding: 0 5px;
+	margin: 0 5px;
+}
+
+.head_ul2 li {
+	border-bottom: 1px solid #e2e2e2;
+	padding: 5px 0;
+	line-height: 18px;
+	padding-left: 15px;
+}
+
+.head_ul2 {
+	height: 260px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 230px;
+}
+
+.head_ul li.qitan_msg {
+	padding: 0 0 3px 0;
+	text-align: left;
+}
+
+.head_ul li.qitan_msg p {
+	padding: 0;
+	margin: 0;
+	line-height: 20px;
+	text-align: left;
+	zoom: 1;
+}
+
+.head_ul li.qitan_msg p em {
+	color: #eb6100;
+	font-family: "宋体";
+	font-style: normal;
+}
+
+.head_ul li.qitan_msg p a:link, .head_ul li.qitan_msg p a:visited {
+	color: #808080 !important;
+}
+
+.head_ul li.qitan_msg p a:hover {
+	color: #4a7f07;
+}
+
+.qitan_UL li {
+	text-align: left;
+	text-indent: 5px;
+}
+
+.color55 {
+	color: #d5d5d5;
+}
+
+.newMessage {
+	background: url(http://www.qiyipic.com/common/fix/header_msg.gif)
+		no-repeat 100% 2px;
+	padding-right: 13px;
+	zoom: 1;
+	line-height: 14px;
+}
+
+.topInfoC_wide {
+	padding-right: 15px;
+}
+
+#j-suggestList {
+	border: 1px solid #666;
+	background: #fff;
+}
+
+#j-suggestList a {
+	display: block;
+	color: #666;
+	padding: 3px;
+}
+
+#j-suggestList a:hover {
+	text-decoration: none;
+	cursor: default;
+}
+
+#j-suggestList a.selected {
+	background: #ddd;
+}
+
+/*用户信息-搜索 */
+.user_login {
+	word-spacing: 5px;
+	color: #e4e4e4;
+	float: right;
+	margin-bottom: 5px;
+	*word-spacing: 0px;
+}
+
+.navForm_wide {
+	color: #dfdfdf;
+	zoom: 1;
+	text-align: right;
+	height: 30px;
+	z-index: 2;
+	position: relative;
+	word-spacing: 3px;
+}
+
+.navForm_wide a.a1 {
+	background:
+		url("http://www.qiyipic.com/common/fix/passport_images/headBg.png")
+		100% -38px no-repeat;
+	display: inline-block;
+	width: 75px;
+	line-height: 23px;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+	vertical-align: middle;
+	padding: 0 0 2px 0;
+	float: left;
+}
+
+.navForm_wide a.a2, .navForm_wide a.a2:hover {
+	background:
+		url(http://www.qiyipic.com/common/fix/qiyi_images/navIcon2.gif) 0 0
+		no-repeat;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	width: 75px;
+	line-height: 23px;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+	vertical-align: middle;
+	padding: 0 5px 2px 0;
+	float: left;
+}
+
+.navFormList {
+	position: absolute;
+	width: 265px;
+	background: #fff;
+	border: 1px solid #808080;
+	right: 51px;
+	top: 24px;
+	font: 14px/23px simsun;
+	text-align: left;
+}
+
+.navFormList a, .navFormList a:hover {
+	display: block;
+	padding: 0 5px;
+	color: #000;
+	zoom: 1;
+	background: #fff;
+	text-decoration: none;
+}
+
+.navFormList a.a1 {
+	background: #e7e7e7;
+}
+
+.navInput {
+	background: url(http://www.qiyipic.com/common/qiyi_images/searchBg.png)
+		0 -80px repeat-x;
+}
+
+.navInputText {
+	width: 256px;
+	height: 15px;
+	padding: 5px;
+	border: none;
+	border-left: 1px solid #cbcbcb;
+	margin-left: 10px;
+	float: left;
+}
+
+.navInputBtn {
+	background-position: 0 0;
+	width: 52px;
+	height: 25px;
+	border: none;
+	cursor: pointer;
+	float: left;
+}
+
+.navInputBtn_ {
+	background-position: 0 -40px;
+	width: 52px;
+	height: 25px;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+	float: left;
+}
+
+.topInfo_wide {
+	position: relative;
+	z-index: 100;
+	background: url(http://www.qiyipic.com/common/homepage_images/navBg.png)
+		0 0 repeat-x #808080;
+	line-height: 33px;
+	height: 33px;
+	text-align: right;
+}
+
+.navList_wide {
+	float: left;
+	padding-left: 2px;
+}
+
+.navList_wide a {
+	float: left;
+	display: inline;
+	padding: 0 10px;
+	background:
+		url(http://www.qiyipic.com/common/homepage_images/navLineBg.png) right
+		center no-repeat;
+	font-size: 14px;
+	color: #fff;
+}
+
+.navList_wide a:hover {
+	color: #e7e7e7;
+	text-decoration: none;
+}
+
+.login_text {
+	background:
+		url(http://www.qiyipic.com/common/fix/hudong2_images/inputBg.png) 0 0
+		repeat-x #fff;
+	height: 15px;
+	padding: 3px;
+	border: 1px solid #ccc;
+	font-family: Arial;
+	width: 125px;
+	float: right;
+}
+
+.login_text_on {
+	border: 2px solid #bad97f;
+	padding: 2px;
+}
+
+.myBtnClass {
+	line-height: 30px;
+	height: 30px;
+	width: 70px;
+	color: #ffffff;
+	background-color: #3ba354;
+	font-size: 16px;
+	-moz-box-shadow: inset 0px 0px 0px 0px #ffffff;
+	-webkit-box-shadow: inset 0px 0px 0px 0px #ffffff;
+	box-shadow: inset 0px 0px 0px 0px #ffffff;
+	text-align: center;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.myBtnClass:hover {
+	background-color: #1c9439;
+}

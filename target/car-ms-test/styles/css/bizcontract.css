@@ -1,0 +1,82 @@
+@media ( min-width : 1330px) {
+	.container {
+		width: 1524px;
+	}
+}
+
+table td, table th {
+	text-align: center;
+}
+
+.box {
+	/*width: 1524px;*/
+	overflow: hidden;
+	color: #333;
+	/*margin-left: 50px;*/
+}
+
+.title {
+	padding: 10px 0 10px;
+}
+
+.newInput {
+	padding: 10px 15px 10px 15px;
+	min-width: 300px;
+}
+
+.newInput label:first-child {
+	min-width: 120px;
+	text-align: right;
+}
+
+.du-btn {
+	text-align: center;
+	margin: 50px 0;
+}
+
+.du-btn a {
+	margin: 0 20px;
+}
+
+.upload {
+	margin-top: 20px;
+}
+
+.upload .form-inline>label {
+	min-width: 130px;
+	text-align: right;
+	padding: 10px 0;
+}
+
+.kv-file-upload {
+	display: none;
+}
+
+.mask {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background: rgba(0, 0, 0, .5);
+	display: none;
+}
+
+.mask .loding {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.mask img {
+	display: block;
+}
+
+.mask p {
+	margin-top: 15px;
+	font-weight: 700;
+	font-size: 20px;
+	color: #ccc;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process displayName="采购流程申请" instanceUrl="/snaker/flow/all" name="purshase">
+<start displayName="start1" layout="99,213,-1,-1" name="start1">
+<transition g="" name="transition1" offset="0,0" to="carApply"/>
+</start>
+<task assignee="applyAperator1" autoExecute="Y" displayName="汽车采购申请" form="/snaker/purshase/apply" layout="204,211,-1,-1" name="carApply" performType="ANY" taskType="Major">
+<transition g="" name="transition2" offset="0,0" to="customerAppoveFirst"/>
+</task>
+<task assignee="approveAdminOperator" autoExecute="Y" displayName="银行审批(付首付款)" form="/snaker/purshase/inform" layout="636,211,-1,-1" name="bankInform" performType="ANY" taskType="Major">
+<transition g="" name="transition5" offset="0,0" to="customerEvaluate"/>
+</task>
+<task assignee="applyOperator" autoExecute="Y" displayName="地接审批" form="/snaker/purshase/customerEvaluate" layout="780,211,-1,-1" name="customerEvaluate" performType="ANY" taskType="Major">
+<transition g="" name="transition6" offset="0,0" to="financeEavlauteSecond"/>
+</task>
+<task assignee="approveAdminOperator" autoExecute="Y" displayName="银行审批(付尾款)" form="/snaker/purshase/bankEvaluate" layout="1056,211,-1,-1" name="bankEvaluate" performType="ANY" taskType="Major">
+<transition g="" name="transition7" offset="0,0" to="end3"/>
+</task>
+<end displayName="end3" layout="1188,213,-1,-1" name="end3"/>
+<task assignee="financeOperator" autoExecute="Y" displayName="财务审批" form="/snaker/purshase/financeEvaluate" layout="492,211,-1,-1" name="financeEvaluate" performType="ANY" taskType="Major">
+<transition g="" name="transition4" offset="0,0" to="bankInform"/>
+</task>
+<task assignee="financeOperator" autoExecute="Y" displayName="财务审批" form="/snaker/purshase/financeEvaluateSecond" layout="912,211,-1,-1" name="financeEavlauteSecond" performType="ANY" taskType="Major">
+<transition g="" name="transition8" offset="0,0" to="bankEvaluate"/>
+</task>
+<task assignee="applyOperator" autoExecute="Y" displayName="地接审批" form="/snaker/purshase/customerAppoveFirst" layout="360,211,-1,-1" name="customerAppoveFirst" performType="ANY" taskType="Major">
+<transition g="" name="transition3" offset="0,0" to="financeEvaluate"/>
+</task>
+</process>

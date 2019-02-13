@@ -1,0 +1,146 @@
+define(function(require, exports, module) {
+	var pagination = require('../base/pagination');
+	var handlebars = require('handlebars').Handlerbars;
+//	var datepickerUtil = require('../base/datepicker-util');
+	var PAGE_SIZE = 10;
+	var submitButton = $("#btnSearch");
+	var form = $('#searchForm');
+	var dataList = $('#J_DataList');
+	var noDataMsg = $('#J_NoDataMsg'),process=$('#process').val();
+	var searchCondition = null;
+//	submitButton.attr('disabled', 'disabled');
+	handlebars.registerHelper('_formatDatetime', _formatDatetime);
+	handlebars.registerHelper('_operate', operate);
+	handlebars.registerHelper('formatstatus', formatstatus);
+	// var globe_context_id = $('#globe_context_id').val() ;
+	var source = $('#dataListTemplate').html(), template = handlebars.compile(source);
+	$(function() {
+		var cur = $('#currpage').val();
+		if (cur)
+			load(cur, PAGE_SIZE);
+		else
+			load(1, PAGE_SIZE);// 加载数据列表
+		submitButton.bind("click", {
+			curPageNo : 1,
+			pageSize : PAGE_SIZE
+		}, dataSearch);// 信息查询
+	});
+	function formatstatus(vid, status) {
+		if (!vid)
+			return "未开票";
+		if (status == 1)
+			return "待审核";
+		if (status == 2)
+			return "门店部补填";
+		if (status == 3)
+			return "门店部不通过";
+		if (status == 4)
+			return "门店部通过";
+		if (status == 5)
+			return "财务部补填";
+		if (status == 6)
+			return "财务部不通过";
+		if (status == 7)
+			return "已开票";
+	}
+	function operate(id, vid, vstatus) {
+		var spa = "&nbsp;", html, edit;
+		if(process==1){
+		if (!vid||vstatus==3) {
+			edit = $("<a href='javascript:void(0);' target='_self' name='editBtn' class='btn63_03' id='"+ id + "'/>").html('<span>申请开票</span>');
+			html=$('<span />').html(edit).html();
+		}else if(vstatus==1||vstatus==4||vstatus==5||vstatus==6||vstatus==7){
+			edit = $("<a href='javascript:void(0);' target='_self' name='editBtn' class='btn63_04' id='"+ id + "'/>").html('<span>查看</span>');
+			html=$('<span />').html(edit).html();
+		}else if(vstatus==2){
+			edit = $("<a href='javascript:void(0);' target='_self' name='editBtn' class='btn63_03' id='"+ id + "'/>").html('<span>编辑</span>');
+			html=$('<span />').html(edit).html();
+		}}
+		else if(process==2){
+		if (vstatus==1) {
+			edit = $("<a href='javascript:void(0);' target='_self' name='editBtn' class='btn63_03' id='"+ id + "'/>").html('<span>审核</span>');
+			html=$('<span />').html(edit).html();
+		}else if(vstatus==5){
+			edit = $("<a href='javascript:void(0);' target='_self' name='editBtn' class='btn63_03' id='"+ id + "'/>").html('<span>编辑</span>');
+			html=$('<span />').html(edit).html();
+		}else {
+			edit = $("<a href='javascript:void(0);' target='_self' name='editBtn' class='btn63_04' id='"+ id + "'/>").html('<span>查看</span>');
+			html=$('<span />').html(edit).html();
+		}}
+		else if(process==3){
+		if (vstatus==4) {
+			edit = $("<a href='javascript:void(0);' target='_self' name='editBtn' class='btn63_03' id='"+ id + "'/>").html('<span>审核</span>');
+			html=$('<span />').html(edit).html();
+		}else {
+			edit = $("<a href='javascript:void(0);' target='_self' name='editBtn' class='btn63_04' id='"+ id + "'/>").html('<span>查看</span>');
+			html=$('<span />').html(edit).html();
+		}}
+		return new handlebars.SafeString(html);
+	}
+//查看合同信息
+	function editClient() {
+		var $this = $(this);
+		var theId = $this.attr('id');
+		var isview=$this.hasClass("btn63_04")
+		if(isview)
+		location.href = $('#editUrl').val() + "?process="+process+"&id=" + theId + "&currpage="+ $('#J_CurPageNo').text() + "&view=1";
+		else location.href = $('#editUrl').val() + "?process="+process+"&id=" + theId + "&currpage="+ $('#J_CurPageNo').text();
+	}
+	// 格式化时间
+	function _formatDatetime(datetime) {
+		if (datetime === null) {
+			return '';
+		}
+		datetime = new Date(datetime);
+		return datetime.getFullYear() + '-'
+				+ _fillZero((datetime.getMonth() + 1)) + '-'
+				+ _fillZero(datetime.getDate());
+	}
+	// 补零
+	function _fillZero(data) {
+		if (data < 10) {
+			return "0" + data;
+		}
+		return data;
+	}
+
+	// 表单搜索
+	function dataSearch(dataObj) {
+		searchCondition = form.serialize();
+		load(dataObj.data.curPageNo, dataObj.data.pageSize);
+	}
+	// 分页数据加载
+	function load(curPageNo, pageSize) {
+		dataList.show();
+		noDataMsg.hide();
+		var queryUrl = $('#searchUrl').val() + "?start=" + curPageNo
+				+ "&pageSize=" + pageSize+"&process="+process; // 查询数据url
+		$.ajax(queryUrl, {
+			type : 'POST',
+			dataType : 'json',
+			data : searchCondition
+		}).done(function(response) {
+			if (response.result.length > 0) {
+				dataList.html(template(response)).css('height', 'auto');
+				pagination.init({
+					'pageSize' : PAGE_SIZE,
+					'totalCount' : response.total,
+					'load' : load,
+					'currentPage' : curPageNo
+				});
+				$('#J_CurPageNo').text(curPageNo);
+				$("a[name='editBtn']").on("click", editClient);
+			} else {
+				dataList.empty().css('height', '40px').hide();
+				noDataMsg.show();
+			}
+		});
+	}
+	// 绑定新增按钮事件
+	// $('#saveBtn').bind("click",saveFun);
+	// 重置
+	function reset() {
+		form[0].reset();
+	}
+	$("#btnReset").bind("click", reset);
+});

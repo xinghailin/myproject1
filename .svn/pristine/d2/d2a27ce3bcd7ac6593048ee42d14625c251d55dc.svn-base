@@ -1,0 +1,138 @@
+signature.keystoreType=jks
+signature.keystorePassword=123456
+signature.keystorePath=D:\\projectmanager\\certificate\\P2Pkeystore.jks
+signature.keyPassword=123456
+signature.keyAlise=
+
+
+ufa.security.use.captcha = false
+ufa.security.defaultTargetUrl = /
+ufa.security.logout.success.url = /
+scratch.validTime = 1
+app.root.path=${app.root.path}
+app.biz.relative.path=${app.biz.relative.path}
+app.product.relative.path=${app.product.relative.path}
+app.banner.relative.path=${app.banner.relative.path}
+app.scenic.relative.path=${app.scenic.relative.path}
+app.app.relative.path=${app.app.relative.path}
+app.task.relative.path = ${app.task.relative.path}
+app.trends.relative.path = ${app.trends.relative.path}
+app.product.home.relative.path = ${app.product.home.relative.path}
+app.product.room.relative.path = ${app.product.room.relative.path}
+app.product.pros.relative.path = ${app.product.pros.relative.path}
+recommend.relative.path = ${recommend.relative.path}
+recommendtype.relative.path = ${recommendtype.relative.path}
+car.taxRefund.path=${car.taxRefund.path}
+car.carClearanceOfGoodsFiles.path=${car.carClearanceOfGoodsFiles.path}
+car.identify.path = ${car.identify.path}
+car.model.path = ${car.model.path}
+contract.video.path=${contract.video.path}
+jndcontract.path=${jndcontract.path}
+redis.address=${redis.address}
+redis.port=${redis.port}
+leasebackcontract.Path=${leasebackcontract.Path}
+#\u8f66\u8f86\u9500\u552e\u5408\u540c
+newsalecontract=/static/newsalecontract
+#\u62a5\u4ef7\u5355
+newreportbill=/static/newreportbill
+#\u9500\u552e\u5408\u540c\u5b9a\u91d1pos\u5355
+newdownpayposbill=/static/newdownpayposbill
+
+##\u98ce\u63a7\u8fdb\u4ef6
+#\u7533\u8bf7\u88681 
+riskapply=/static/risk/apply
+#\u8eab\u4efd\u8bc12
+riskidentify=/static/risk/identify
+#\u9a7e\u9a76\u8bc13
+riskdriver=/static/risk/driver
+#\u5de5\u4f5c\u8bc1\u660e4
+riskworkprove=/static/risk/workprove
+#\u5f81\u4fe1\u62a5\u544a5
+riskcreditreport=/static/risk/creditreport
+#\u5de5\u8d44\u5361\u6216\u7ecf\u8425\u8d70\u8d26\u5361\uff08\u6b63\u9762\uff096
+riskpaycard=/static/risk/paycard
+#\u6d41\u6c347
+riskflow=/static/risk/flow
+#\u623f\u4ea7\u8bc18
+riskhouse=/static/risk/house
+#\u7ed3\u5a5a\u8bc1\uff08\u53ef\u9009\uff099
+riskmarriage=/static/risk/marriage
+#\u62c5\u4fdd\u4eba\u8eab\u4efd\u8bc1\uff08\u6b63\u53cd\u9762 \u53ef\u9009\uff0910
+riskensure=/static/risk/ensure
+#\u98ce\u63a7\u6d88\u8d39\u8d37\u8d37\u5ba1\u4f1a\u5ba1\u6279\u8868
+riskapprovaltable=/static/risk/approvaltable
+#\u5e93\u878d\u6279\u91cf\u5bfc\u5165excel\u4fdd\u5b58\u76ee\u5f55
+krcarbatchexcel=/static/krcarbatchexcel
+
+#\u5f00\u79681\u8425\u4e1a\u6267\u7167
+invoicerun=/static/invoice/run
+#\u5f00\u79682\u8f6c\u8d26\u94f6\u884c\u6d41\u6c34/\u652f\u4ed8\u5b9d/\u5fae\u4fe1\u6d41\u6c34\u622a\u56fe
+invoiceflow=/static/invoice/flow
+#\u5f00\u79683\u4ee3\u4ed8\u6b3e\u8bc1\u660e
+invoicereplace=/static/invoice/replace
+#\u5f00\u79684\u4ee3\u4ed8\u6b3e\u4eba\u8eab\u4efd\u8bc1\u6b63\u53cd\u9762
+invoicereplaceid=/static/invoice/replaceid
+#\u5f00\u79685\u8eab\u4efd\u8bc1\u6b63\u53cd\u9762
+invoiceidentify=/static/invoice/identify
+
+#\u7acb\u6848\u5404\u79cd\u6750\u6599
+riskcase=/static/riskcase
+web_pic=/web/web_pic
+web_model_pic=/web/web_pic/model
+#\u5730\u533a\u56fe\u7247
+area.path=${area.path}
+#\u5730\u533a\u54c1\u724clogo\u56fe\u7247
+areaBrand=${areaBrand}
+#\u6d4b\u8bd5\u8bbf\u95eeftp\u670d\u52a1\u5668\u6587\u4ef6\u524d\u7f00\u5730\u5740
+ftpFileUrl=${ftp.file.url}
+#\u81ea\u91c7\u5b9a\u91d1\u4ed8\u6b3e\u7533\u8bf7\u6742\u8d39\u6587\u4ef6\u5730\u5740
+paymentRequest.Path=${paymentRequest.Path}
+#\u914d\u8f66\u5355\u5c55\u9500\u534f\u8bae\u6587\u4ef6
+supplycar.Path=${supplycar.Path}
+#\u6279\u53d1\u9500\u552e\u6c34\u5355
+wholesaleCarfile=${wholesaleCarfile}
+#\u8f66\u6e90\u76f8\u5173\u56fe\u7247
+carsource=/file/carsource/decorate
+carsourcepic=/file/carsource/pic
+alipay.notify_url= ${alipay.notify_url}
+#alipay.seller_email = 67752989@qq.com
+alipay.seller_email = shangtuwangluo@163.com
+
+#\u77ed\u4fe1\u8d26\u6237\u5bc6\u7801
+sms.accountId=${sms.accountId}
+sms.password=${sms.password}
+is_prduction = ${is_prduction}
+contract_one=/contract/one
+contract_two=/contract/two
+contract_three=/contract/three
+
+
+
+# seal  \u7b7e\u8bc1
+organizeAccountId =${organizeAccountId}
+organizeSealData =${organizeSealData}
+PROJECT_ID =${PROJECT_ID}
+PROJECT_SECRET =${PROJECT_SECRET}
+HTTP_TYPE = ${HTTP_TYPE}
+API_HOST =${API_HOST} 
+APISURL = ${APISURL}
+ALGORITHM_TYPE = ${ALGORITHM_TYPE}
+ESIGN_PUBLIC_KEY = ${ESIGN_PUBLIC_KEY} 
+PRIVATE_KEY =  ${PRIVATE_KEY}
+
+
+#ftp config
+ftp.address=${ftp.address}
+ftp.port=${ftp.port}
+ftp.username=${ftp.username}
+ftp.password=${ftp.password}
+ftp.filepath=${ftp.filepath}
+
+
+
+#ChuangLan sms
+account =N7255763
+pswd =ApaZ4bLSr16380
+smsSingleRequestServerUrl = https://smssh1.253.com/msg/send/json
+#smsVariableRequestUrl = https://smssh1.253.com/msg/variable/json;
+smsReportRequestUrl = https://smssh1.253.com/msg/pull/report

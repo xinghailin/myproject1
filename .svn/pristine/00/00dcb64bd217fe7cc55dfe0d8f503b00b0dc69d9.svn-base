@@ -1,0 +1,33 @@
+﻿### 以下是测试环境
+##默认编码格式##
+char.set=UTF-8
+##商户私钥路径##
+##pfx.name=bfkey_100000178@@100000916.pfx
+##商户私钥密码##
+##pfx.pwd=100000178_204500
+##宝付公钥路径##
+##cer.name=baofoo_pub.cer
+##终端号 ##
+##terminal.id=100000916
+##商户号##
+##member.id=100000178
+##数据类型####json/xml
+data.type=json
+##接口地址##
+##requestapi.url=https://tgw.baofoo.com/batchpay/api/batchTransRequest
+
+
+### 以下是正式环境
+
+##商户私钥路径##
+pfx.name=sy.pfx
+##商户私钥密码##
+pfx.pwd=123456
+##宝付公钥路径##
+cer.name=baofu.cer
+##终端号##
+terminal.id=37169
+##商户号##
+member.id=1194718
+##接口地址##
+requestapi.url=https://public.baofoo.com/batchpay/api/batchTransRequest

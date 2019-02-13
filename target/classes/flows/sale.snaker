@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process displayName="销售流程" instanceUrl="/snaker/flow/all" name="sale">
+<start displayName="start1" layout="136,188,51,40" name="start1">
+<transition g="" name="transition1" offset="0,0" to="sellApply"/>
+</start>
+<task assignee="sellApply.operator" autoExecute="Y" displayName="提交卖车申请" form="/snaker/sell/sellApply" layout="243,187,107,51" name="sellApply" performType="ANY" taskType="Major">
+<transition g="" name="transition2" offset="0,0" to="sureMoney"/>
+</task>
+<task assignee="sureMoney.operator" autoExecute="Y" displayName="财务核实款项" form="/snaker/sell/sureMoney" layout="397,189,103,51" name="sureMoney" performType="ANY" taskType="Major">
+<transition g="" name="transition3" offset="0,0" to="end1"/>
+</task>
+<end displayName="end1" layout="570,192,-1,-1" name="end1"/>
+</process>

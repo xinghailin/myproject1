@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process displayName="v2.0购车出库" instanceUrl="/snaker/flow/all" name="outRepository">
+<start displayName="start1" layout="73,182,-1,-1" name="start">
+<transition g="" name="transition1" offset="0,0" to="submitContract"/>
+</start>
+<task assignee="submitContractAssignee" autoExecute="Y" displayName="门店销售提交出库合同" form="/snaker/submitContract" layout="165,178,155,52" name="submitContract" performType="ANY" taskType="Major">
+<transition g="" name="transition2" offset="0,0" to="hqContract"/>
+</task>
+<task assignee="hqContractAssignee" autoExecute="Y" displayName="总部审核信息表和合同" form="/snaker/hqContract" layout="372,177,167,52" name="hqContract" performType="ANY" taskType="Major">
+<transition g="" name="transition3" offset="0,0" to="hqFinFirstpay"/>
+</task>
+<task assignee="hqFinFirstpayAssignee" autoExecute="Y" displayName="总部财务审核首付款" form="/snaker/hqFinFirstpay" layout="595,177,154,52" name="hqFinFirstpay" performType="ANY" taskType="Major">
+<transition g="" name="transition4" offset="0,0" to="clientCheckCar"/>
+</task>
+<task assignee="notifyFinalpayAssignee" autoExecute="Y" displayName="门店销售通知客户支付尾款" form="/snaker/notifyFinalpay" layout="124,345,168,52" name="notifyFinalpay" performType="ANY" taskType="Major">
+<transition g="" name="transition6" offset="0,0" to="hqFinFinalpay"/>
+</task>
+<task assignee="hqFinFinalpayAssignee" autoExecute="Y" displayName="总部财务审核尾款" form="/snaker/hqFinFinalpay" layout="359,346,157,52" name="hqFinFinalpay" performType="ANY" taskType="Major">
+<transition g="" name="transition7" offset="0,0" to="readyoutmaterial"/>
+</task>
+<task assignee="clientCheckCarAssignee" autoExecute="Y" displayName="门店销售指引客户验车" form="/snaker/clientCheckCar" layout="824,177,153,52" name="clientCheckCar" performType="ANY" taskType="Major">
+<transition g="" name="transition5" offset="0,0" to="notifyFinalpay"/>
+</task>
+<task assignee="readyOutMaterialAssignee" autoExecute="Y" displayName="门店销售准备出库材料" form="/snaker/viewmaterial" layout="572,347,148,51" name="readyoutmaterial" performType="ANY" taskType="Major">
+<transition g="" name="transition8" offset="0,0" to="settlement"/>
+</task>
+<task assignee="settlementAssignee" autoExecute="Y" displayName="结算" form="/snaker/settlement" layout="801,348,-1,-1" name="settlement" performType="ANY" taskType="Major">
+<transition g="" name="transition9" offset="0,0" to="end1"/>
+</task>
+<end displayName="end1" layout="997,349,-1,-1" name="end1"/>
+</process>

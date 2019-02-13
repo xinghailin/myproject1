@@ -1,0 +1,110 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*"%>
+<%@ include file="/WEB-INF/views/base/base.jsp"%>
+
+<input id="searchUrl" type="hidden" value='<ufa:url namespace="portal-ms" fieldName="PERMISSION_RESOURCE_QUERY_URL"/>' /> 
+<input id="addUrl" type="hidden" value='<ufa:url namespace="portal-ms" fieldName="PERMISSION_RESOURCE_ADD_URL"/>' /> 
+<input id="editUrl" type="hidden" value='<ufa:url namespace="portal-ms" fieldName="PERMISSION_RESOURCE_EDIT_URL"/>' /> 
+<input id="deleteUrl" type="hidden" value='<ufa:url namespace="portal-ms" fieldName="PERMISSION_RESOURCE_DELETE_URL"/>' /> 
+<div class="main_right">
+	<div class="rg_list">
+		<div class="tb_list">
+		<form name="searchForm" id="searchForm">
+			<ul class="tb_ul">
+			  <li>
+			  	<div class="tab_txt01"><span class="td_01">资源名称：</span>
+			  		<span class="td_05"><input id="name" type="text" class="input_text01"  /></span>
+			  		<span class="td_01">请求方法：</span>
+			  		<span class="td_05">
+			  		 <select id="method" name="method" style="width: 60px">
+						<option value="GET">GET</option>
+						<option value="POST">POST</option>
+					</select>
+			  		</span>
+			  	</div>
+			  </li>
+			  <li>
+			  	<div class="tab_txt01"><span class="td_01">URI：</span>
+			  		<span class="td_05" >
+			  		  <input name="uri" id="uri" type="text" class="input_text01"  />
+			  		</span>
+			  		<span class="td_01">应用：</span>
+			  		<span class="td_05"> 
+			  		   <select id="appId" name="appId" style="width: 60px">
+						  <option value="1">门户</option>
+						  <option value="2">管理平台</option>
+					  </select>
+			  		</span>
+			  	</div>
+			  </li>
+			  <li>
+			  	<div class="tab_txt01"><span class="td_01">状态：</span>
+			  		<span class="td_05"> 
+			  		  <select id="status" name="status" style="width:100px">
+						<option value="1">有效</option>
+						<option value="0">无效</option>
+					</select> 
+			  		</span>
+			  		<span class="td_01"></span>
+			  		<span class="td_05">  </span>
+			  	</div>
+			  </li>
+			  <li>
+			  <div class="btnlist02">
+			       <a href="javascript:void(0)" id='searchBtn' class="btn91">查询</a>
+			       <a href="javascript:void(0)" id='addBtn' class="btn91">新增</a>
+                   <a href="javascript:void(0)" id='resetBtn' class="btn91_02 margin_let10">重置</a>
+ 			  </div>
+			  </li>
+			</ul>
+			</form>
+		</div>
+		<div class="clear"></div>
+		  <div  class="hide" id="J_DataList"></div>
+		  <div class="nodata hide" id="J_NoDataMsg">
+		      <p>选择的查询条件暂时没有数据。</p>
+		  </div>
+	</div>
+</div>
+
+
+<script id="dataListTemplate" type="text/x-handlebars-template">
+<div class="table_list" >
+    <table cellpadding="0" cellspacing="0"  class="tb_mian">
+        <thead>
+        <tr>
+            <th style="text-align:center">名称</th>
+            <th style="text-align:center">URI</th>
+			<th style="text-align:center">应用</th>
+			<th style="text-align:center">请求方法</th>
+            <th style="text-align:center">描述</th>  
+            <th style="text-align:center">状态</th>
+			<th style="text-align:center">创建时间</th>
+			<th style="text-align:center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#result.result}}
+        <tr>
+            <td>{{name}}</td>
+			<td>{{uri}}</td>
+			<td>{{displaySelectText appId 'appId'}}</td>
+			<td>{{method}}</td>
+            <td>{{description}}</td>
+			<td>{{displaySelectText status 'status'}}</td>
+			<td>{{formatDatetime createTime}}</td>
+			<td>
+				{{ addButton id}}
+			</td>
+        </tr>
+        {{/result.result}}
+        </tbody>
+    </table>
+</div>
+<div id="J_Pagination" class="pagelist"></div>
+</script>
+
+<script type="text/javascript">
+	<%--seajs.use("${scriptBasePath}/permission/resource/query.js");--%>
+    // 加载入口模块
+    seajs.use("${scriptBasePath}/permission/resource/query.js");
+</script>
